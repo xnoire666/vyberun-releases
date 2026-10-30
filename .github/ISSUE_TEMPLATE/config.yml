@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security problem
+    url: https://github.com/xnoire666/vyberun-releases/security/advisories/new
+    about: Please report security problems privately, not as a public issue.
+  - name: Extension guide
+    url: https://github.com/xnoire666/vyberun-releases/blob/main/docs/extension-guide.md
+    about: How to build your own extension, with a step-by-step tutorial.

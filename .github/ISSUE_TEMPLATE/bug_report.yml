@@ -1,0 +1,61 @@
+name: Bug report
+description: Something in vyberun doesn't work as expected.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to report this. Security problems are reported privately instead: see SECURITY.md.
+        Please leave out passwords, server addresses and anything else private from what you paste here.
+  - type: input
+    id: version
+    attributes:
+      label: vyberun version
+      description: Help ▸ About vyberun shows it.
+      placeholder: "0.1.1"
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      placeholder: "Windows 11 24H2"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you saw, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open a Git Bash tab
+        2. Split it with Ctrl+Shift+D
+        3. ...
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Sidebar (spaces, cards)
+        - Terminal tabs and panes
+        - Servers (SSH, PuTTY)
+        - Claude Code and agents
+        - Screenshots
+        - Search
+        - Extensions
+        - Settings or Help
+        - Other
+  - type: textarea
+    id: log
+    attributes:
+      label: Log (optional)
+      description: Help ▸ Open vyberun's log. Paste the lines from around the time it happened, after removing anything private.
+      render: text
