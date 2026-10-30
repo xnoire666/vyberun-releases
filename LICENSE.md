@@ -1,8 +1,8 @@
 # vyberun End-User License
 
-Version 1, [DATE]
+Version 1, October 30, 2026
 
-This license is an agreement between you and [LICENSOR NAME] ("we"), the author of vyberun. It covers the vyberun program you download from https://github.com/xnoire666/vyberun-releases, its updates, and its documentation ("the software"). By installing or using the software, you agree to these terms. If you don't agree, don't install or use it.
+This license is an agreement between you and the author of vyberun ("we"). It covers the vyberun program you download from https://github.com/xnoire666/vyberun-releases, its updates, and its documentation ("the software"). By installing or using the software, you agree to these terms. If you don't agree, don't install or use it.
 
 ## 1. What you may do
 
@@ -67,6 +67,6 @@ This license lasts until it ends. It ends automatically if you break any of its 
 ## 11. General
 
 - Changes: We may publish a new version of this license with a future release. The version that came with the copy you installed applies to that copy.
-- Governing law: This license is governed by the laws of [COUNTRY / STATE], without regard to its conflict-of-law rules.
+- Governing law: This license is governed by the laws of the Philippines, without regard to its conflict-of-law rules.
 - Whole agreement: This is the whole agreement between you and us about the software. If a court finds part of it unenforceable, the rest still applies.
-- Contact: for questions about this license, write to [CONTACT EMAIL OR URL].
+- Contact: for questions about this license, open an issue at https://github.com/xnoire666/vyberun-releases/issues.
