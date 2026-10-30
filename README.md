@@ -152,6 +152,6 @@ This repository holds vyberun's releases, documentation and issue tracker. The s
 
 ## License
 
-vyberun is proprietary software. All rights reserved.
+vyberun is proprietary software, free to use under the [vyberun End-User License](LICENSE.md). All rights not granted there are reserved.
 
 `Assets/conpty/` (ConPTY and OpenConsole) and `Assets/nativeterm/` (the Windows Terminal renderer) in each release are Microsoft's, from the [Windows Terminal](https://github.com/microsoft/terminal) project, under its MIT license. See [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
