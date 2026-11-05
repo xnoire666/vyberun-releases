@@ -34,8 +34,8 @@ vyberun is a native Windows application. The terminal is drawn by the same rende
 | Spaces and cards | Organise projects, terminals and servers into spaces (for example, one per ticket). Each card keeps its own tabs. |
 | Sessions that keep running | Tabs keep running when vyberun closes or restarts, and come back with their output. Server work can keep running on the server. |
 | A team of AI agents | Give each tab a role (backend, frontend, QA). Agents know their teammates, hand work to each other and reply. |
-| Agents read other tabs | An agent can read another tab, such as a server log or a failing build, when you ask it to. Read-only, with your permission. |
-| Status at a glance | Every tab shows whether its agent is working, waiting for you, or finished while you were elsewhere. |
+| Agents read and investigate tabs | Show an agent the error you highlighted, or let it investigate a broken tab: it reads the tab and runs commands that only look (logs, status, files). Anything that changes something asks you first. |
+| Status at a glance | Every tab shows whether its agent is working, waiting for you, or finished while you were elsewhere, and each space's header sums up what runs in it. |
 | Long screenshots | Capture a whole conversation, a long output or a server's history as one image, then annotate and share it. |
 | Servers | Connect over SSH with a key, a password or a saved PuTTY session. Passwords are kept by Windows Credential Manager. |
 
@@ -43,7 +43,7 @@ vyberun is a native Windows application. The terminal is drawn by the same rende
 
 **One ticket, several agents.** The backend agent adds an API field and tells the frontend agent its exact shape. The frontend agent builds the screen against it, and the QA agent checks the result against the ticket. You review instead of relaying messages.
 
-**Finding the cause of an error.** Your dev server's tab shows a stack trace. Ask the agent to read that tab, and it goes straight to the problem without any copy and paste.
+**Finding the cause of an error.** Your dev server's tab shows a stack trace. Highlight it and show it to an agent, or let the agent investigate that tab: it reads the log, checks the service's status and the files around it, and asks you before changing anything.
 
 **Several tasks at once.** While you review one agent's work, the sidebar shows which agent is waiting for an answer and which one has just finished.
 
@@ -59,7 +59,9 @@ vyberun is a native Windows application. The terminal is drawn by the same rende
 - Filter the sidebar by recent work: the last hour, today, the last 7 days, or a date range. Cards can also be sorted by recent activity.
 - Each tab shows when it was last used, and cards not used today are dimmed.
 - Archive a space when its work is done. View ▸ Archived spaces… searches the archive and restores a space.
-- Pin, colour and attach links to cards and spaces. A link icon next to the name opens them.
+- Pin, colour and attach links to cards and spaces. Pick from 18 colours or any colour of your own; a coloured card shows its name in that colour. A link icon next to the name opens the links.
+- Give a card an icon of your own (any PNG, JPG or ICO image), shown beside its name.
+- Each space's header shows what runs in its cards, such as "1 waiting · 2 working", even when the space is folded. Click it to go there.
 - Rearrange cards and spaces with Ctrl+drag. Search the sidebar from the box at the top.
 
 ### Projects
@@ -89,7 +91,7 @@ vyberun is a native Windows application. The terminal is drawn by the same rende
 
 ### Claude Code and other agents
 
-- Each tab shows the agent's state: working, waiting for you (a question or a permission request), or finished.
+- Each tab shows the agent's state: working (also while it waits on a long command or its background agents), waiting for you (a question or a permission request), or finished.
 - Windows notifications when an agent needs you or a long task completes.
 - Search a whole conversation, and capture long answers as one screenshot.
 - Roles: give a tab a role from its menu. The role is shown on the tab and in the sidebar, and the agent is told its role and its teammates'.
@@ -97,12 +99,16 @@ vyberun is a native Windows application. The terminal is drawn by the same rende
 - Handovers: choose whether agents pass work to each other only when asked, after suggesting it, on their own, or all the way to the end of a task.
 - A loop guard stops agents that keep messaging each other without you.
 - Move an agent's conversation to another tab or card.
+- Show to an agent: highlight text in any tab, right-click, and it lands in an agent's prompt with where it came from. Works with any agent tab.
+- Let an agent investigate a tab: the agent reads it and runs commands that only look (logs, service status, files, git) without asking; any other command shows you a dialog with its reason, and you can change it first. A bar shows which agent is investigating, and Done ends it. Production servers never run changes.
+- Choose how agents read other tabs (Settings ▸ Agents): ask every time, once per tab, or read this PC's tabs (or all tabs) freely. Production servers always ask.
 - Works with Claude Code, and roles also work with other command-line agents such as Gemini CLI and Codex.
 
 ### General
 
 - Search files and folders on your PC, and everything in vyberun, with Ctrl+Shift+P.
 - Screenshots with annotation: pen, highlighter, boxes, circles and crop.
+- Terminal ▸ Activity… shows the memory and CPU each tab uses, programs left running after their tab closed, and programs opened from vyberun such as your editor. Stop what you don't need.
 - Themes, from plain and minimal to glass and glow.
 - Extensions can add their own spaces, cards and menus. The extension guide includes a step-by-step tutorial.
 
