@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vyberun · The terminal workspace for AI coding agents</title>
+<meta name="description" content="The terminal workspace for Windows where AI coding agents work as a team.">
+<link rel="icon" href="img/logo.png">
+<style>
+  :root {
+    --bg: #0f0f10;
+    --panel: #18181a;
+    --line: #2a2a2e;
+    --text: #ececec;
+    --muted: #9b9ba1;
+  }
+  * { box-sizing: border-box; }
+  /* one screen, no scrolling: the page is the window's height, and the screenshot takes what's left */
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    height: 100vh; height: 100dvh;
+    display: flex; flex-direction: column; overflow: hidden;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.6 "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* made-up terminal output scrolling slowly behind the page, faded out in the middle */
+  .term-bg {
+    position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none;
+    -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 40%, transparent 25%, #000 75%);
+            mask-image: radial-gradient(ellipse 75% 70% at 50% 40%, transparent 25%, #000 75%);
+  }
+  .term-bg pre {
+    margin: 0; padding: 0 3vw; font: 14px/1.7 "Cascadia Code", "Cascadia Mono", Consolas, monospace;
+    color: rgba(200, 200, 210, .16); white-space: pre; animation: scroll-up 90s linear infinite;
+  }
+  .term-bg .p { color: rgba(168, 85, 247, .35); }
+  .term-bg .g { color: rgba(78, 201, 138, .32); }
+  .term-bg .y { color: rgba(232, 176, 74, .32); }
+  @keyframes scroll-up { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .term-bg pre { animation: none; } }
+
+  main {
+    flex: 1; min-height: 0; text-align: center;
+    display: flex; align-items: center; justify-content: center; padding: 3vh 0;
+  }
+  main .wrap { width: 100%; }
+  h1 {
+    margin: 0; display: flex; flex-direction: column; align-items: center; gap: 1.6vh;
+    font-size: clamp(30px, min(7vw, 6.5vh), 64px); line-height: 1; letter-spacing: -0.02em; font-weight: 700;
+  }
+  h1 img { width: clamp(52px, min(12vw, 11vh), 104px); filter: drop-shadow(0 0 40px rgba(168, 85, 247, .45)); }
+  .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 3.2vh; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 16px; border-radius: 8px;
+    font-weight: 600; font-size: 14px; line-height: 1.4;
+    border: 1px solid var(--line); background: var(--panel);
+  }
+  .btn.primary { background: var(--text); color: #111; border-color: var(--text); }
+  .btn.primary:hover { background: #fff; }
+  .btn small { font-weight: 400; font-size: 12px; opacity: .7; }
+  .note { margin: 1.2vh 0 0; font-size: 12px; color: var(--muted); }
+  .btn[aria-disabled="true"] { opacity: .55; pointer-events: none; }
+  .shot {
+    /* as wide as the height left over allows (16:9), never wider than 760 px or the window */
+    width: min(760px, 100%, max(200px, (100vh - 330px) * 1.778));
+    width: min(760px, 100%, max(200px, (100dvh - 330px) * 1.778));
+    margin: 4vh auto 0; border-radius: 12px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,.08);
+    box-shadow: 0 30px 80px rgba(0,0,0,.6), 0 0 120px rgba(168, 85, 247, .18);
+  }
+
+  footer { flex: none; border-top: 1px solid var(--line); padding: 8px 0; color: var(--muted); font-size: 13px; line-height: 1.4; background: rgba(15,15,16,.85); }
+  footer .wrap { max-width: none; display: flex; gap: 14px 26px; flex-wrap: wrap; align-items: center; }
+  footer nav { display: flex; gap: 22px; flex-wrap: wrap; margin-left: auto; }
+  footer a:hover { color: var(--text); }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 0 16px; }
+    .shot { border-radius: 8px; }
+    footer { padding: 8px 0; font-size: 12px; }
+    footer .wrap { justify-content: center; }
+    footer nav { margin-left: 0; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="term-bg" aria-hidden="true"><pre id="termText"></pre></div>
+
+<main>
+  <div class="wrap">
+    <h1><img src="img/logo.png" alt="">vyberun</h1>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/xnoire666/vyberun-releases/releases/latest">Download for Windows <small>zip</small></a>
+      <a class="btn" href="#" aria-disabled="true">Microsoft Store <small>coming soon</small></a>
+    </div>
+    <p class="note">The zip isn't signed yet. If Windows warns you, choose More info ▸ Run anyway.</p>
+    <div class="shot"><img src="img/2-team.png" alt="vyberun with a team of agents in the sidebar" width="1920" height="1080"></div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 vyberun</span>
+    <nav>
+      <a href="https://github.com/xnoire666/vyberun-releases/releases">Releases</a>
+      <a href="https://github.com/xnoire666/vyberun-releases/blob/main/PRIVACY.md">Privacy</a>
+      <a href="https://github.com/xnoire666/vyberun-releases/blob/main/LICENSE.md">License</a>
+      <a href="https://github.com/xnoire666/vyberun-releases/issues">Support</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // the background's made-up output (repeated, and twice over, so the loop has no seam)
+  const lines = [
+    '<span class="p">PS C:\\work\\shop\\shop-api&gt;</span> git status',
+    'On branch SHOP-142-checkout',
+    'Changes not staged for commit:',
+    '        modified:   app/Http/Controllers/CheckoutController.php',
+    '',
+    '<span class="p">PS C:\\work\\shop\\shop-api&gt;</span> claude',
+    '<span class="y">●</span> backend · waiting for you',
+    '&gt; Add a POST /checkout endpoint that validates the cart',
+    '<span class="p">●</span> Reading routes/api.php',
+    '<span class="p">●</span> Writing app/Http/Requests/CheckoutRequest.php',
+    '<span class="g">✓</span> POST /checkout now validates the cart',
+    '',
+    '<span class="p">PS C:\\work\\shop\\shop-web&gt;</span> npm run dev',
+    '  VITE v7.0.0  ready in 412 ms',
+    '  ➜  Local:   http://localhost:5173/',
+    '',
+    '<span class="p">dev@shop:~/shop-api$</span> tail -f storage/logs/laravel.log',
+    '[2026-11-16 09:12:03] local.INFO: checkout started {"items":2}',
+    '[2026-11-16 09:12:04] local.INFO: checkout validated',
+    '',
+    '<span class="g">●</span> qa · done',
+    '<span class="p">PS C:\\work\\shop\\shop-web&gt;</span> npm test',
+    ' ✓ src/Checkout.test.jsx (4 tests) 38ms',
+    ' Test Files  1 passed (1)',
+    '',
+    '<span class="p">PS C:\\work\\shop\\shop-api&gt;</span> git log --oneline',
+    'e1f03ec (HEAD -&gt; SHOP-142-checkout, main) First version',
+    ''
+  ];
+  const block = Array(4).fill(lines.join('\n')).join('\n');
+  document.getElementById('termText').innerHTML = block + '\n' + block;
+</script>
+
+</body>
+</html>
