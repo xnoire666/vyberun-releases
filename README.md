@@ -131,6 +131,10 @@ vyberun is a native Windows application. The terminal is drawn by the same rende
 
 ## Download and install
 
+Get vyberun from the [Microsoft Store](https://apps.microsoft.com/detail/9MX9G62RFFQ5). The Store version includes .NET, is signed by Microsoft and updates itself.
+
+Or use the zip:
+
 1. Install the [.NET 10 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/10.0) (x64), once per PC. If it's missing, vyberun's first start offers the download.
 2. Download the latest `vyberun-<version>-win-x64.zip` from [Releases](https://github.com/xnoire666/vyberun-releases/releases).
 3. Unzip it anywhere, for example `C:\Tools`, and run `vyberun\vyberun.exe`.
@@ -142,7 +146,7 @@ Releases are marked as pre-release while vyberun is in alpha. The builds are not
 ## Requirements
 
 - Windows 10 (version 1809 or later) or Windows 11, 64-bit
-- [.NET 10 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/10.0)
+- [.NET 10 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/10.0), for the zip (the Store version includes it)
 - Optional: Git for Windows (Git Bash tabs), WSL (Ubuntu tabs), PuTTY (saved PuTTY sessions), Claude Code (agent features)
 
 ## Extensions
