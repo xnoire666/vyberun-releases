@@ -67,11 +67,17 @@
   .btn.primary:hover { background: #fff; }
   .btn small { font-weight: 400; font-size: 12px; opacity: .7; }
   .note { margin: 1.2vh 0 0; font-size: 12px; color: var(--muted); }
-  /* the same Store version, from a terminal */
-  .winget { display: inline-flex; align-items: center; gap: 10px; margin: 1.4vh auto 0; padding: 5px 6px 5px 12px; border: 1px solid var(--line); border-radius: 8px; background: rgba(24,24,26,.85); font: 13px "Cascadia Code", "Cascadia Mono", Consolas, monospace; color: var(--text); }
-  .winget .or { color: var(--muted); }
-  .winget button { font: 12px "Segoe UI", system-ui, sans-serif; color: var(--muted); background: transparent; border: 1px solid var(--line); border-radius: 6px; padding: 2px 8px; cursor: pointer; }
+  /* the same Store version, from a terminal: a small PowerShell window that types the command */
+  .winget { display: inline-flex; flex-direction: column; margin: 1.4vh auto 0; min-width: min(360px, 100%); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #0b0b0c; text-align: left; box-shadow: 0 8px 24px rgba(0,0,0,.35); }
+  .winget .bar { display: flex; align-items: center; gap: 6px; padding: 5px 8px 5px 10px; background: var(--panel); border-bottom: 1px solid var(--line); font: 11.5px "Segoe UI", system-ui, sans-serif; color: var(--muted); }
+  .winget .bar span { margin-left: 2px; }
+  .winget button { margin-left: auto; font: 11.5px "Segoe UI", system-ui, sans-serif; color: var(--muted); background: transparent; border: 1px solid var(--line); border-radius: 5px; padding: 1px 8px; cursor: pointer; }
   .winget button:hover { color: var(--text); border-color: #3a3a40; }
+  .winget .line { padding: 9px 12px 10px; font: 13.5px "Cascadia Code", "Cascadia Mono", Consolas, monospace; color: var(--text); white-space: nowrap; }
+  .winget .ps { color: #6e6e75; }
+  .winget .cur { display: inline-block; width: .55em; height: 1.1em; margin-left: 1px; background: var(--text); vertical-align: -0.2em; animation: blink 1.1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .winget .cur { animation: none; } }
   .btn[aria-disabled="true"] { opacity: .55; pointer-events: none; }
   .shot {
     /* as wide as the height left over allows (16:9), never wider than 760 px or the window */
@@ -108,7 +114,10 @@
       <a class="btn" href="https://github.com/xnoire666/vyberun-releases/releases/latest">Download the zip</a>
       <a class="btn" href="manual/">Read the manual</a>
     </div>
-    <div class="winget"><span class="or">or</span><code>winget install vyberun</code><button type="button" id="copy-winget" aria-label="Copy the winget command">Copy</button></div>
+    <div class="winget" role="group" aria-label="Install with winget">
+      <div class="bar"><span>PowerShell</span><button type="button" id="copy-winget" aria-label="Copy the winget command">Copy</button></div>
+      <div class="line"><span class="ps">PS C:\&gt; </span><code id="winget-cmd">winget install vyberun</code><span class="cur" aria-hidden="true"></span></div>
+    </div>
     <p class="note">The zip isn't signed yet. If Windows warns you, choose More info ▸ Run anyway.</p>
     <div class="shot"><img src="img/2-team.png" alt="vyberun with a team of agents in the sidebar" width="1920" height="1080"></div>
   </div>
@@ -129,10 +138,18 @@
 
 <script>
   // Copy: the winget command to the clipboard
+  const wingetCmd = 'winget install vyberun', cmd = document.getElementById('winget-cmd');
   document.getElementById('copy-winget').addEventListener('click', e => {
-    navigator.clipboard.writeText('winget install vyberun').then(() => { e.target.textContent = 'Copied'; setTimeout(() => e.target.textContent = 'Copy', 1500); }, () => {});
+    navigator.clipboard.writeText(wingetCmd).then(() => { e.target.textContent = 'Copied'; setTimeout(() => e.target.textContent = 'Copy', 1500); }, () => {});
   });
-  // the background's made-up output (repeated, and twice over, so the loop has no seam)
+  // the command typed as in a terminal, then left there; typed again every 12 s (not with reduced motion)
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const type = () => {
+      let n = 0; cmd.textContent = '';
+      const t = setInterval(() => { cmd.textContent = wingetCmd.slice(0, ++n); if (n >= wingetCmd.length) clearInterval(t); }, 70);
+    };
+    setTimeout(type, 600); setInterval(type, 12000);
+  }  // the background's made-up output (repeated, and twice over, so the loop has no seam)
   const lines = [
     '<span class="p">PS C:\\work\\shop\\shop-api&gt;</span> git status',
     'On branch SHOP-142-checkout',
