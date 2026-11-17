@@ -53,10 +53,22 @@
   main .wrap { width: 100%; }
   h1 {
     margin: 0; display: flex; flex-direction: column; align-items: center; gap: 1.6vh;
-    font-size: clamp(30px, min(7vw, 6.5vh), 64px); line-height: 1; letter-spacing: -0.02em; font-weight: 700;
+    font-size: clamp(36px, min(9vw, 9vh), 88px); line-height: 1; letter-spacing: -0.02em; font-weight: 700;
   }
-  h1 img { width: clamp(52px, min(12vw, 11vh), 104px); filter: drop-shadow(0 0 40px rgba(168, 85, 247, .45)); }
-  .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 3.2vh; }
+  h1 img { width: clamp(64px, min(16vw, 15vh), 136px); filter: drop-shadow(0 0 40px rgba(168, 85, 247, .45)); }
+  .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 4.5vh; }
+  /* the manual: a quiet link in the top corner, where people look for docs; the Store is the one button */
+  .top-link { position: fixed; top: 18px; right: 24px; z-index: 2; display: inline-flex; align-items: center; gap: 8px;
+    font: 600 15px "Segoe UI", system-ui, sans-serif; color: var(--text); text-decoration: none;
+    padding: 7px 14px; border: 1px solid var(--line); border-radius: 8px; background: rgba(24,24,26,.75); }
+  .top-link svg { width: 18px; height: 18px; }
+  .top-link:hover { border-color: #4a4a52; background: rgba(36,36,40,.9); }
+  @media (max-width: 640px) { .top-link { top: 10px; right: 12px; } }
+  /* "or" between the Store button and the winget command: two ways to the same install */
+  .or { display: flex; align-items: center; gap: 12px; width: min(360px, 100%); margin: 1.8vh auto 0; color: var(--muted);
+    font: 600 11px "Segoe UI", system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; }
+  .or::before, .or::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--line)); }
+  .or::after { background: linear-gradient(90deg, var(--line), transparent); }
   .btn {
     display: inline-flex; align-items: center; gap: 8px;
     padding: 8px 16px; border-radius: 8px;
@@ -68,7 +80,7 @@
   .btn small { font-weight: 400; font-size: 12px; opacity: .7; }
   .note { margin: 1.2vh 0 0; font-size: 12px; color: var(--muted); }
   /* the same Store version, from a terminal: a small PowerShell window that types the command */
-  .winget { display: inline-flex; flex-direction: column; margin: 1.4vh auto 0; min-width: min(360px, 100%); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #0b0b0c; text-align: left; box-shadow: 0 8px 24px rgba(0,0,0,.35); }
+  .winget { display: inline-flex; flex-direction: column; margin: 1.8vh auto 0; min-width: min(360px, 100%); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #0b0b0c; text-align: left; box-shadow: 0 8px 24px rgba(0,0,0,.35); }
   .winget .bar { display: flex; align-items: center; gap: 6px; padding: 5px 8px 5px 10px; background: var(--panel); border-bottom: 1px solid var(--line); font: 11.5px "Segoe UI", system-ui, sans-serif; color: var(--muted); }
   .winget .bar span { margin-left: 2px; }
   .winget button { margin-left: auto; font: 11.5px "Segoe UI", system-ui, sans-serif; color: var(--muted); background: transparent; border: 1px solid var(--line); border-radius: 5px; padding: 1px 8px; cursor: pointer; }
@@ -103,6 +115,7 @@
 </style>
 </head>
 <body>
+<a class="top-link" href="manual/"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M2 3.5c2-.9 4-.9 6 .4 2-1.3 4-1.3 6-.4v9c-2-.9-4-.9-6 .4-2-1.3-4-1.3-6-.4z"/><path d="M8 3.9v9"/></svg>Manual</a>
 
 <div class="term-bg" aria-hidden="true"><pre id="termText"></pre></div>
 
@@ -111,15 +124,12 @@
     <h1><img src="img/logo.png" alt="">vyberun</h1>
     <div class="cta">
       <a class="btn primary" href="https://apps.microsoft.com/detail/9MX9G62RFFQ5">Get it from the Microsoft Store</a>
-      <a class="btn" href="https://github.com/xnoire666/vyberun-releases/releases/latest">Download the zip</a>
-      <a class="btn" href="manual/">Read the manual</a>
     </div>
+    <div class="or" aria-hidden="true">or</div>
     <div class="winget" role="group" aria-label="Install with winget">
       <div class="bar"><span>PowerShell</span><button type="button" id="copy-winget" aria-label="Copy the winget command">Copy</button></div>
       <div class="line"><span class="ps">PS C:\&gt; </span><code id="winget-cmd">winget install vyberun</code><span class="cur" aria-hidden="true"></span></div>
     </div>
-    <p class="note">The zip isn't signed yet. If Windows warns you, choose More info ▸ Run anyway.</p>
-    <div class="shot"><img src="img/2-team.png" alt="vyberun with a team of agents in the sidebar" width="1920" height="1080"></div>
   </div>
 </main>
 
@@ -127,7 +137,6 @@
   <div class="wrap">
     <span>© 2026 vyberun</span>
     <nav>
-      <a href="manual/">Manual</a>
       <a href="https://github.com/xnoire666/vyberun-releases/releases">Releases</a>
       <a href="https://github.com/xnoire666/vyberun-releases/blob/main/PRIVACY.md">Privacy</a>
       <a href="https://github.com/xnoire666/vyberun-releases/blob/main/LICENSE.md">License</a>

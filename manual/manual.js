@@ -5,9 +5,11 @@
   const $ = id => document.getElementById(id);
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const store = {   // (the open tabs and folded chapters: this browser only, and only a convenience)
-    get(k, d) { try { return JSON.parse(localStorage.getItem('vyberun-manual-' + k)) ?? d; } catch { return d; } },
-    set(k, v) { try { localStorage.setItem('vyberun-manual-' + k, JSON.stringify(v)); } catch { } }
+  // (the open tabs and folded chapters: this browser tab only, for this visit, and only a convenience; kept in
+  // sessionStorage, so they're gone when the browser closes and nothing about a visitor stays behind; no cookies)
+  const store = {
+    get(k, d) { try { return JSON.parse(sessionStorage.getItem('vyberun-manual-' + k)) ?? d; } catch { return d; } },
+    set(k, v) { try { sessionStorage.setItem('vyberun-manual-' + k, JSON.stringify(v)); } catch { } }
   };
 
   // ---- tabs: the topics opened, the current one first time it's seen ----
@@ -43,13 +45,14 @@
   document.querySelector('.side .item.sel')?.scrollIntoView({ block: 'nearest' });
   $('contents-btn').onclick = () => document.body.classList.toggle('toc');
 
-  // ---- "On this page" follows the scroll ----
-  const page = $('page'), onpage = $('onpage');
+  // ---- the page's sections, under its line in the sidebar, follow the scroll ----
+  const page = $('page');
   function follow() {
-    const links = [...onpage.querySelectorAll('a')]; let k = 0;
+    const links = [...document.querySelectorAll('.side .sub')]; let k = 0;
     links.forEach((a, j) => { const h = document.getElementById(decodeURIComponent(a.hash.slice(1))); if (h && h.getBoundingClientRect().top - page.getBoundingClientRect().top < 80) k = j; });
     links.forEach((a, j) => a.classList.toggle('on', j === k));
   }
+  document.querySelectorAll('.side .sub').forEach(a => a.addEventListener('click', () => document.body.classList.remove('toc')));
   page.addEventListener('scroll', follow, { passive: true }); follow();
 
   // ---- search ----
