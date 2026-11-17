@@ -133,6 +133,12 @@ vyberun is a native Windows application. The terminal is drawn by the same rende
 
 Get vyberun from the [Microsoft Store](https://apps.microsoft.com/detail/9MX9G62RFFQ5). The Store version includes .NET, is signed by Microsoft and updates itself.
 
+Or install the same Store version from a terminal:
+
+```
+winget install vyberun
+```
+
 Or use the zip:
 
 1. Install the [.NET 10 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/10.0) (x64), once per PC. If it's missing, vyberun's first start offers the download.
