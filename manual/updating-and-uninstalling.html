@@ -51,13 +51,15 @@
             <h2 id="updating-the-zip">Updating the zip</h2>
             <ol class="steps"><li>Download the new zip from <a class="link" href="https://github.com/xnoire666/vyberun-releases/releases">Releases</a>.</li><li>Close vyberun. Choosing <span class="ui">Keep running</span> is fine: your tabs keep running while you update.</li><li>Unzip the new version over the old one, into the same folder, replacing the files.</li><li>Start vyberun. Your tabs, settings, spaces and servers are as they were.</li></ol>
             <div class="note"><p><span class="k">Note.</span> Unzip into the same folder as before. vyberun in a different folder has its own background program, so it wouldn't show the tabs the old folder's vyberun kept running.</p></div>
+            <h2 id="zip-to-store">Moving from the zip to the Store version</h2>
+            <ol class="steps"><li>Close the zip's vyberun with <span class="ui">Stop everything</span>: tabs it kept running don't move to the Store version.</li><li>Install the Store version, from the <a class="link" href="https://apps.microsoft.com/detail/9MX9G62RFFQ5">Microsoft Store</a> or with <code>winget install vyberun</code>.</li><li>Start it. It finds your spaces, cards, servers and settings where the zip left them.</li><li>Delete the zip's folder.</li></ol>
             <h2 id="uninstalling">Uninstalling</h2>
             <ol class="steps"><li>Close vyberun. In the close dialog, choose <span class="ui">Stop everything</span>, so nothing keeps running.</li><li>Remove the program: - Store version: right-click vyberun in the Start menu ▸ <span class="ui">Uninstall</span>. - Zip: delete the folder you unzipped it into.</li><li>To remove your settings too, delete <code>%LOCALAPPDATA%\vyberun</code>. To remove saved server passwords, open Windows Credential Manager ▸ <span class="ui">Windows Credentials</span> and remove the entries named <code>vyberun server …</code>.</li></ol>
             <p>Uninstalling doesn't touch your projects, your servers or Claude Code.</p>
             <div class="pager"><a href="installing.html"><small>‹ Previous</small>Installing</a><a class="next" href="the-window.html"><small>Next ›</small>The window</a></div>
           </article>
         </div>
-        <aside class="onpage" id="onpage" aria-label="On this page"><div class="h"># on this page</div><a href="#which-version">Which version you have</a><a href="#updating-the-store-version">Updating the Store version</a><a href="#updating-the-zip">Updating the zip</a><a href="#uninstalling">Uninstalling</a></aside>
+        <aside class="onpage" id="onpage" aria-label="On this page"><div class="h"># on this page</div><a href="#which-version">Which version you have</a><a href="#updating-the-store-version">Updating the Store version</a><a href="#updating-the-zip">Updating the zip</a><a href="#zip-to-store">Moving from the zip to the Store version</a><a href="#uninstalling">Uninstalling</a></aside>
       </div>
     </div>
   </div>
