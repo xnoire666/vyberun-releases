@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sessions that survive · vyberun manual</title>
+<meta name="description" content="How vyberun's tabs keep running after you close it, what ends them, and how to put a tab away without stopping it.">
+<link rel="icon" href="../img/logo.png">
+<link rel="stylesheet" href="manual.css">
+</head>
+<body>
+<div class="win">
+  <div class="titlebar">
+    <a class="brand" href="./"><img src="../img/logo.png" alt="">vyberun <span>manual</span></a>
+    <span class="menu"><a href="../">Home</a><a href="https://github.com/xnoire666/vyberun-releases/releases">Releases</a><a href="https://github.com/xnoire666/vyberun-releases/issues">Support</a></span>
+    <div class="search" id="search">
+      <span class="ico">⌕</span><input id="q" type="search" placeholder="Search the manual" autocomplete="off" spellcheck="false" aria-label="Search the manual" aria-controls="results"><kbd>/</kbd>
+      <div class="results" id="results" role="listbox" hidden></div>
+    </div>
+    <button class="contents-btn" id="contents-btn" type="button">Contents</button>
+    <a class="get" href="https://apps.microsoft.com/detail/9MX9G62RFFQ5">Get vyberun</a>
+    <span class="controls" aria-hidden="true">─☐✕</span>
+  </div>
+
+  <div class="body">
+    <nav class="side" id="side" aria-label="Contents">
+      <div class="space" style="--c:#4ec98a"><button class="space-head" type="button" data-ch="Getting started" aria-expanded="true"><span class="chev">⌄</span>Getting started<span class="sum">4</span></button><a class="item" data-id="what-vyberun-is" href="what-vyberun-is.html"><span class="dot"></span>What vyberun is</a><a class="item" data-id="installing" href="installing.html"><span class="dot"></span>Installing</a><a class="item" data-id="updating-and-uninstalling" href="updating-and-uninstalling.html"><span class="dot"></span>Updating and uninstalling</a><a class="item" data-id="the-window" href="the-window.html"><span class="dot"></span>The window</a></div>
+      <div class="space" style="--c:#6ea8fe"><button class="space-head" type="button" data-ch="The terminal" aria-expanded="true"><span class="chev">⌄</span>The terminal<span class="sum">6</span></button><a class="item" data-id="tabs-and-shells" href="tabs-and-shells.html"><span class="dot"></span>Tabs and shells</a><a class="item" data-id="split-panes" href="split-panes.html"><span class="dot"></span>Split panes</a><a class="item sel" aria-current="page" data-id="sessions-that-survive" href="sessions-that-survive.html"><span class="dot"></span>Sessions that survive</a><a class="item" data-id="find-and-search" href="find-and-search.html"><span class="dot"></span>Find and search</a><a class="item" data-id="copy-paste-and-links" href="copy-paste-and-links.html"><span class="dot"></span>Copy, paste and links</a><a class="item" data-id="screenshots" href="screenshots.html"><span class="dot"></span>Screenshots</a></div>
+      <div class="space" style="--c:#b48cff"><button class="space-head" type="button" data-ch="Organising your work" aria-expanded="true"><span class="chev">⌄</span>Organising your work<span class="sum">3</span></button><a class="item" data-id="spaces-and-cards" href="spaces-and-cards.html"><span class="dot"></span>Spaces and cards</a><a class="item" data-id="projects" href="projects.html"><span class="dot"></span>Projects</a><a class="item" data-id="notifications-and-activity" href="notifications-and-activity.html"><span class="dot"></span>Notifications and activity</a></div>
+      <div class="space" style="--c:#e8b04a"><button class="space-head" type="button" data-ch="Servers" aria-expanded="true"><span class="chev">⌄</span>Servers<span class="sum">4</span></button><a class="item" data-id="adding-a-server" href="adding-a-server.html"><span class="dot"></span>Adding a server</a><a class="item" data-id="keys-and-putty-sessions" href="keys-and-putty-sessions.html"><span class="dot"></span>Keys and PuTTY sessions</a><a class="item" data-id="tmux-sessions" href="tmux-sessions.html"><span class="dot"></span>tmux sessions</a><a class="item" data-id="copying-files" href="copying-files.html"><span class="dot"></span>Copying files</a></div>
+      <div class="space" style="--c:#e5484d"><button class="space-head" type="button" data-ch="Claude Code" aria-expanded="true"><span class="chev">⌄</span>Claude Code<span class="sum">4</span></button><a class="item" data-id="claude-in-a-tab" href="claude-in-a-tab.html"><span class="dot"></span>Claude in a tab</a><a class="item" data-id="roles-and-handovers" href="roles-and-handovers.html"><span class="dot"></span>Roles and handovers</a><a class="item" data-id="reading-other-tabs" href="reading-other-tabs.html"><span class="dot"></span>Reading other tabs</a><a class="item" data-id="subagents-and-skills" href="subagents-and-skills.html"><span class="dot"></span>Subagents and skills</a></div>
+      <div class="space" style="--c:#9a9aa0"><button class="space-head" type="button" data-ch="Extensions" aria-expanded="true"><span class="chev">⌄</span>Extensions<span class="sum">2</span></button><a class="item" data-id="using-extensions" href="using-extensions.html"><span class="dot"></span>Using extensions</a><a class="item" data-id="making-an-extension" href="making-an-extension.html"><span class="dot"></span>Making one</a></div>
+      <div class="space" style="--c:#9a9aa0"><button class="space-head" type="button" data-ch="Reference" aria-expanded="true"><span class="chev">⌄</span>Reference<span class="sum">4</span></button><a class="item" data-id="all-shortcuts" href="all-shortcuts.html"><span class="dot"></span>All shortcuts</a><a class="item" data-id="menus" href="menus.html"><span class="dot"></span>Menus</a><a class="item" data-id="settings" href="settings.html"><span class="dot"></span>Settings</a><a class="item" data-id="files-vyberun-uses" href="files-vyberun-uses.html"><span class="dot"></span>Files vyberun uses</a></div>
+      <div class="space" style="--c:#9a9aa0"><button class="space-head" type="button" data-ch="Troubleshooting" aria-expanded="true"><span class="chev">⌄</span>Troubleshooting<span class="sum">3</span></button><a class="item" data-id="common-problems" href="common-problems.html"><span class="dot"></span>Common problems</a><a class="item" data-id="logs" href="logs.html"><span class="dot"></span>Logs</a><a class="item" data-id="reporting-a-problem" href="reporting-a-problem.html"><span class="dot"></span>Reporting a problem</a></div>
+    </nav>
+
+    <div class="main">
+      <div class="tabrow" id="tabs"></div>
+      <div class="panes">
+        <div class="page" id="page">
+          <div class="cmd" aria-hidden="true"><span class="ps">PS C:\&gt; </span><span class="c">vyberun help sessions-that-survive</span> <span class="cursor"></span></div>
+          <article data-topic="sessions-that-survive">
+            <div class="crumbs"><a href="./">Manual</a> › The terminal</div>
+            <h1>Sessions that survive</h1>
+            <p class="lead">Close vyberun and your tabs keep running. Open it again and they're back, further along.</p>
+            <h2 id="closing">Closing vyberun</h2>
+            <p>vyberun's tabs don't run inside its window. Each tab's shell runs in a separate background program, the session host, so closing the window doesn't stop them. A build, a server or a Claude Code session keeps going while vyberun is closed.</p>
+            <ol class="steps"><li>Close vyberun. If tabs are open, it asks what to do with them: <span class="ui">Keep running</span>, <span class="ui">Stop everything</span> or <span class="ui">Cancel</span>.</li><li>Choose <span class="ui">Keep running</span>. Your tabs carry on in the background.</li><li>Open vyberun again, or click its icon in the notification area of the taskbar. Your tabs come back with everything they printed meanwhile.</li></ol>
+            <figure class="scene" role="img" aria-label="Keep running: the window closes, and the tabs carry on in the background."><div class="sc-stage"><style>
+  /* closing vyberun: the dialog, Keep running clicked, the window goes, the tabs carry on (the tray says so) */
+  .s-close .sc-win { animation-name: s-close-win; }
+  .s-close .sc-dialog { animation-name: s-close-dlg; }
+  .s-close .pri { animation-name: s-close-press; }
+  .s-close .sc-ptr { animation-name: s-close-ptr; }
+  .s-close .sc-toast { animation-name: s-close-toast; }
+  @keyframes s-close-win { 0%, 8% { opacity: 1; filter: none; } 12%, 44% { opacity: 1; filter: brightness(.55); } 52%, 92% { opacity: 0; filter: brightness(.55); } 100% { opacity: 1; filter: none; } }
+  @keyframes s-close-dlg { 0%, 8% { opacity: 0; transform: translate(-50%, -46%); } 12%, 44% { opacity: 1; transform: translate(-50%, -50%); } 50%, 100% { opacity: 0; transform: translate(-50%, -50%); } }
+  @keyframes s-close-press { 0%, 37% { transform: none; } 39% { transform: scale(.94); } 42%, 100% { transform: none; } }
+  @keyframes s-close-ptr { 0%, 14% { transform: translate(30cqw, 34cqw); opacity: 0; } 17% { opacity: 1; } 34%, 44% { transform: translate(67.4cqw, 28.6cqw); opacity: 1; } 50%, 100% { transform: translate(67.4cqw, 28.6cqw); opacity: 0; } }
+  @keyframes s-close-toast { 0%, 55% { opacity: 0; transform: translateY(1em); } 60%, 90% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; transform: none; } }
+  .s-close .sc-toast { opacity: 0; }
+</style>
+<div class="s-close sc-anim" style="position:absolute; inset:0">
+  <div class="sc-win">
+    <div class="sc-bar"><b><span class="logo"></span>vyberun</b><span>File</span><span>View</span><span>Terminal</span><span class="ctl">─☐✕</span></div>
+    <div class="sc-body">
+      <div class="sc-side">
+        <div class="sc-space"><div class="h">SHOP-142 Checkout</div><div class="r" style="--d:#6ea8fe"><i></i>shop-api</div><div class="r" style="--d:#e8b04a"><i></i>shop-web</div></div>
+      </div>
+      <div class="sc-main">
+        <div class="sc-tabs"><span class="sc-tab on"><i style="--d:#6ea8fe"></i>backend</span><span class="sc-tab">frontend</span><span class="sc-tab">qa</span></div>
+        <div class="sc-term"><span class="p">PS C:\work\shop\shop-api&gt;</span> npm start
+<span class="g">✓</span> listening on http://localhost:3000</div>
+      </div>
+    </div>
+  </div>
+  <div class="sc-dialog">
+    <div class="t"><span>Close vyberun</span><span>✕</span></div>
+    <div class="c">
+      <div class="sum">4 terminal tabs are open, with npm start running.</div>
+      <div class="sub">Kept tabs keep running, and come back with their output when you open vyberun again.</div>
+      <div class="chk"><i></i>Remember my choice  (Settings ▸ Closing vyberun)</div>
+      <div class="btns"><span class="sc-btn">Cancel</span><span class="sc-btn">Stop everything</span><span class="sc-btn pri">Keep running</span></div>
+    </div>
+  </div>
+  <div class="sc-taskbar"><span class="dim">^</span><span class="ico"></span><span>9:41</span></div>
+  <div class="sc-toast"><b><i></i>vyberun</b><span>4 tabs running in the background</span></div>
+  <div class="sc-ptr"></div>
+</div></div><figcaption>Keep running: the window closes, and the tabs carry on in the background.</figcaption></figure>
+            <p><span class="ui">Restart vyberun</span> in the File menu always keeps the tabs.</p>
+            <h2 id="choose">Choosing what closing does</h2>
+            <p>Tick <span class="ui">Remember my choice</span> in the close dialog, or open <span class="ui">Settings ▸ Closing vyberun</span> and pick one:</p>
+            <div class="tablewrap"><table><tr><th>Choice</th><th>When vyberun closes with tabs open</th></tr><tr><td><span class="ui">Ask each time</span></td><td>vyberun asks (the default).</td></tr><tr><td><span class="ui">Keep them running in the background</span></td><td>The window closes; every tab keeps running.</td></tr><tr><td><span class="ui">Stop everything</span></td><td>Every tab's program is stopped, then vyberun closes.</td></tr></table></div>
+            <p>Stopping ends running programs the normal way first, as <kbd>Ctrl</kbd>+<kbd>C</kbd> would, so nothing is cut off in the middle of writing a file.</p>
+            <h2 id="tray">What's still running</h2>
+            <p>While vyberun is closed, its icon in the notification area says how many tabs run in the background. Click it to open vyberun. Right-click it for <span class="ui">Open vyberun</span> or <span class="ui">Stop everything…</span>.</p>
+            <figure class="scene" role="img" aria-label="Right-click vyberun's icon: what still runs, and Open vyberun."><div class="sc-stage"><style>
+  /* the tray icon, right-clicked: what still runs, Open vyberun, Stop everything… */
+  .s-tray .sc-menu { animation-name: s-tray-menu; right: 6%; bottom: 13%; }
+  .s-tray .sc-ptr { animation-name: s-tray-ptr; }
+  .s-tray .open { animation-name: s-tray-hl; }
+  @keyframes s-tray-ptr { 0% { transform: translate(60cqw, 30cqw); opacity: 0; } 8% { opacity: 1; } 22%, 30% { transform: translate(92.5cqw, 40.8cqw); } 48%, 80% { transform: translate(81cqw, 32.4cqw); opacity: 1; } 90%, 100% { transform: translate(81cqw, 32.4cqw); opacity: 0; } }
+  @keyframes s-tray-menu { 0%, 27% { opacity: 0; transform: translateY(.6em); } 31%, 88% { opacity: 1; transform: none; } 94%, 100% { opacity: 0; } }
+  @keyframes s-tray-hl { 0%, 46% { background: transparent; } 50%, 86% { background: #3d3d42; } 90%, 100% { background: transparent; } }
+</style>
+<div class="s-tray sc-anim" style="position:absolute; inset:0">
+  <div class="sc-menu">
+    <div class="g">4 tabs running in the background</div>
+    <div class="in">backend</div>
+    <div class="in">frontend</div>
+    <div class="in">qa</div>
+    <div class="in">npm start</div>
+    <div class="sep"></div>
+    <div class="b open">Open vyberun</div>
+    <div>Stop everything…</div>
+  </div>
+  <div class="sc-taskbar"><span class="dim">^</span><span class="dim">ENG</span><span class="ico"></span><span>9:41</span></div>
+  <div class="sc-ptr"></div>
+</div></div><figcaption>Right-click vyberun's icon: what still runs, and Open vyberun.</figcaption></figure>
+            <p>While vyberun is open, the memory and CPU next to the tabs count vyberun and everything in its tabs. They turn amber when this PC runs low on memory. Click them, or choose <span class="ui">Terminal ▸ Activity…</span>, to see each tab's share and stop what you don't need.</p>
+            <h2 id="detach">Putting a tab away</h2>
+            <p>To clear the tab row without stopping a tab, detach it. It keeps running inside vyberun, out of view.</p>
+            <ol class="steps"><li>Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd> in the tab.</li><li>To bring it back, click the small arrow next to <span class="ui">+</span> above the terminal and choose it, or hold <kbd>Ctrl</kbd> and right-click a tab ▸ <span class="ui">Re-attach tab</span>.</li></ol>
+            <figure class="scene" role="img" aria-label="Ctrl+Shift+X: the tab leaves the row, and waits under the arrow next to +."><div class="sc-stage"><style>
+  /* Ctrl+Shift+X: the tab leaves the row, still running; the ⌄ next to + lists it under Detached */
+  .s-det .sc-keys { animation-name: s-det-keys; left: 50%; top: 52%; transform: translateX(-50%); font-size: 1.4em; }
+  .s-det .gone { animation-name: s-det-gone; }
+  .s-det .t1 { animation-name: s-det-t1; }
+  .s-det .t2 { animation-name: s-det-t2; }
+  .s-det .sc-menu { animation-name: s-det-menu; left: 44%; top: 22%; }
+  .s-det .back { animation-name: s-det-hl; }
+  .s-det .sc-ptr { animation-name: s-det-ptr; }
+  @keyframes s-det-keys { 0%, 8% { opacity: 0; } 12%, 30% { opacity: 1; } 36%, 100% { opacity: 0; } }
+  @keyframes s-det-gone { 0%, 26% { max-width: 12em; opacity: 1; } 34%, 100% { max-width: 0; opacity: 0; padding: 0; margin: 0; border-width: 0; } }
+  @keyframes s-det-t1 { 0%, 30% { opacity: 1; } 34%, 100% { opacity: 0; } }
+  @keyframes s-det-t2 { 0%, 30% { opacity: 0; } 34%, 100% { opacity: 1; } }
+  @keyframes s-det-menu { 0%, 52% { opacity: 0; transform: translateY(-.4em); } 56%, 90% { opacity: 1; transform: none; } 95%, 100% { opacity: 0; } }
+  @keyframes s-det-hl { 0%, 68% { background: transparent; } 72%, 90% { background: #3d3d42; } 95%, 100% { background: transparent; } }
+  @keyframes s-det-ptr { 0%, 38% { transform: translate(60cqw, 40cqw); opacity: 0; } 42% { opacity: 1; } 50%, 54% { transform: translate(45.6cqw, 7.6cqw); } 68%, 88% { transform: translate(54cqw, 24.4cqw); opacity: 1; } 94%, 100% { opacity: 0; transform: translate(54cqw, 24.4cqw); } }
+  .s-det .sc-tab.gone { overflow: hidden; }
+  .s-det .tt { position: absolute; inset: 2em 0 0 0; }
+  .s-det .t2 { opacity: 0; }
+</style>
+<div class="s-det sc-anim" style="position:absolute; inset:0">
+  <div class="sc-win" style="inset: 5% 6% 5% 6%">
+    <div class="sc-bar"><b><span class="logo"></span>vyberun</b><span>File</span><span>View</span><span>Terminal</span><span class="ctl">─☐✕</span></div>
+    <div class="sc-body">
+      <div class="sc-side">
+        <div class="sc-space"><div class="h">SHOP-142 Checkout</div><div class="r" style="--d:#6ea8fe"><i></i>shop-api</div><div class="r"><i></i>shop-web</div></div>
+      </div>
+      <div class="sc-main" style="position:relative">
+        <div class="sc-tabs"><span class="sc-tab on gone"><i style="--d:#6ea8fe"></i>npm start</span><span class="sc-tab">backend</span><span class="sc-tab">qa</span><span style="padding:0 .4em">+</span><span>⌄</span></div>
+        <div class="tt t1 sc-term"><span class="p">PS C:\work\shop\shop-api&gt;</span> npm start
+<span class="g">✓</span> listening on http://localhost:3000
+<span class="p">GET /api/cart 200 12ms</span></div>
+        <div class="tt t2 sc-term"><span class="p">PS C:\work\shop\shop-api&gt;</span> git status
+On branch SHOP-142-checkout
+nothing to commit, working tree clean</div>
+      </div>
+    </div>
+  </div>
+  <div class="sc-keys"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd></div>
+  <div class="sc-menu">
+    <div>Git Bash</div><div>PowerShell</div><div>Command Prompt</div>
+    <div class="sep"></div>
+    <div class="g">Detached</div>
+    <div class="back">● npm start · keeps running</div>
+  </div>
+  <div class="sc-ptr"></div>
+</div></div><figcaption>Ctrl+Shift+X: the tab leaves the row, and waits under the arrow next to +.</figcaption></figure>
+            <h2 id="ends">What ends a session</h2>
+            <p>Tabs keep running until one of these happens:</p>
+            <ul><li>Windows restarts, shuts down or signs you out.</li><li>You stop them: <span class="ui">Stop everything</span>, closing a tab, or <span class="ui">Stop</span> in Activity.</li><li>The program in the tab exits, for example when you type <code>exit</code>.</li><li>The Store updates vyberun (see <a class="link" href="updating-and-uninstalling.html#updating-the-store-version">Updating and uninstalling</a>).</li></ul>
+            <div class="note warn"><p><span class="k">Warning.</span> A restart for Windows Update ends your tabs too. Save your work before one.</p></div>
+            <h2 id="servers">On a server</h2>
+            <p>A server tab's work can keep running on the server itself, even with your PC off: close the tab with <span class="ui">Leave it running on the server</span>, then rejoin it later with <span class="ui">▶</span> on the server's card. This uses the server's own tmux; nothing is installed.</p>
+            <div class="pager"><a href="split-panes.html"><small>‹ Previous</small>Split panes</a><a class="next" href="find-and-search.html"><small>Next ›</small>Find and search</a></div>
+          </article>
+        </div>
+        <aside class="onpage" id="onpage" aria-label="On this page"><div class="h"># on this page</div><a href="#closing">Closing vyberun</a><a href="#choose">Choosing what closing does</a><a href="#tray">What's still running</a><a href="#detach">Putting a tab away</a><a href="#ends">What ends a session</a><a href="#servers">On a server</a></aside>
+      </div>
+    </div>
+  </div>
+  <div class="status"><span>vyberun manual · applies to 0.1.10</span><span class="hide-sm" id="count"></span><a class="r" href="https://github.com/xnoire666/vyberun-releases/issues">Report a mistake</a></div>
+</div>
+<script>window.MANUAL = {"id":"sessions-that-survive","topics":{"all-shortcuts":{"c":"#9a9aa0","title":"All shortcuts","ch":"Reference"},"roles-and-handovers":{"c":"#e5484d","title":"Roles and handovers","ch":"Claude Code"},"installing":{"c":"#4ec98a","title":"Installing","ch":"Getting started"},"logs":{"c":"#9a9aa0","title":"Logs","ch":"Troubleshooting"},"settings":{"c":"#9a9aa0","title":"Settings","ch":"Reference"},"files-vyberun-uses":{"c":"#9a9aa0","title":"Files vyberun uses","ch":"Reference"},"split-panes":{"c":"#6ea8fe","title":"Split panes","ch":"The terminal"},"updating-and-uninstalling":{"c":"#4ec98a","title":"Updating and uninstalling","ch":"Getting started"},"find-and-search":{"c":"#6ea8fe","title":"Find and search","ch":"The terminal"},"projects":{"c":"#b48cff","title":"Projects","ch":"Organising your work"},"notifications-and-activity":{"c":"#b48cff","title":"Notifications and activity","ch":"Organising your work"},"using-extensions":{"c":"#9a9aa0","title":"Using extensions","ch":"Extensions"},"spaces-and-cards":{"c":"#b48cff","title":"Spaces and cards","ch":"Organising your work"},"tabs-and-shells":{"c":"#6ea8fe","title":"Tabs and shells","ch":"The terminal"},"what-vyberun-is":{"c":"#4ec98a","title":"What vyberun is","ch":"Getting started"},"making-an-extension":{"c":"#9a9aa0","title":"Making one","ch":"Extensions"},"tmux-sessions":{"c":"#e8b04a","title":"tmux sessions","ch":"Servers"},"sessions-that-survive":{"c":"#6ea8fe","title":"Sessions that survive","ch":"The terminal"},"common-problems":{"c":"#9a9aa0","title":"Common problems","ch":"Troubleshooting"},"copying-files":{"c":"#e8b04a","title":"Copying files","ch":"Servers"},"claude-in-a-tab":{"c":"#e5484d","title":"Claude in a tab","ch":"Claude Code"},"keys-and-putty-sessions":{"c":"#e8b04a","title":"Keys and PuTTY sessions","ch":"Servers"},"adding-a-server":{"c":"#e8b04a","title":"Adding a server","ch":"Servers"},"copy-paste-and-links":{"c":"#6ea8fe","title":"Copy, paste and links","ch":"The terminal"},"reading-other-tabs":{"c":"#e5484d","title":"Reading other tabs","ch":"Claude Code"},"screenshots":{"c":"#6ea8fe","title":"Screenshots","ch":"The terminal"},"reporting-a-problem":{"c":"#9a9aa0","title":"Reporting a problem","ch":"Troubleshooting"},"subagents-and-skills":{"c":"#e5484d","title":"Subagents and skills","ch":"Claude Code"},"menus":{"c":"#9a9aa0","title":"Menus","ch":"Reference"},"the-window":{"c":"#4ec98a","title":"The window","ch":"Getting started"}}};</script>
+<script src="manual.js"></script>
+</body>
+</html>

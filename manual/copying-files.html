@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Copying files · vyberun manual</title>
+<meta name="description" content="Downloading files from a server and uploading files to it in vyberun, with progress, resuming after a dropped connection, and checks.">
+<link rel="icon" href="../img/logo.png">
+<link rel="stylesheet" href="manual.css">
+</head>
+<body>
+<div class="win">
+  <div class="titlebar">
+    <a class="brand" href="./"><img src="../img/logo.png" alt="">vyberun <span>manual</span></a>
+    <span class="menu"><a href="../">Home</a><a href="https://github.com/xnoire666/vyberun-releases/releases">Releases</a><a href="https://github.com/xnoire666/vyberun-releases/issues">Support</a></span>
+    <div class="search" id="search">
+      <span class="ico">⌕</span><input id="q" type="search" placeholder="Search the manual" autocomplete="off" spellcheck="false" aria-label="Search the manual" aria-controls="results"><kbd>/</kbd>
+      <div class="results" id="results" role="listbox" hidden></div>
+    </div>
+    <button class="contents-btn" id="contents-btn" type="button">Contents</button>
+    <a class="get" href="https://apps.microsoft.com/detail/9MX9G62RFFQ5">Get vyberun</a>
+    <span class="controls" aria-hidden="true">─☐✕</span>
+  </div>
+
+  <div class="body">
+    <nav class="side" id="side" aria-label="Contents">
+      <div class="space" style="--c:#4ec98a"><button class="space-head" type="button" data-ch="Getting started" aria-expanded="true"><span class="chev">⌄</span>Getting started<span class="sum">4</span></button><a class="item" data-id="what-vyberun-is" href="what-vyberun-is.html"><span class="dot"></span>What vyberun is</a><a class="item" data-id="installing" href="installing.html"><span class="dot"></span>Installing</a><a class="item" data-id="updating-and-uninstalling" href="updating-and-uninstalling.html"><span class="dot"></span>Updating and uninstalling</a><a class="item" data-id="the-window" href="the-window.html"><span class="dot"></span>The window</a></div>
+      <div class="space" style="--c:#6ea8fe"><button class="space-head" type="button" data-ch="The terminal" aria-expanded="true"><span class="chev">⌄</span>The terminal<span class="sum">6</span></button><a class="item" data-id="tabs-and-shells" href="tabs-and-shells.html"><span class="dot"></span>Tabs and shells</a><a class="item" data-id="split-panes" href="split-panes.html"><span class="dot"></span>Split panes</a><a class="item" data-id="sessions-that-survive" href="sessions-that-survive.html"><span class="dot"></span>Sessions that survive</a><a class="item" data-id="find-and-search" href="find-and-search.html"><span class="dot"></span>Find and search</a><a class="item" data-id="copy-paste-and-links" href="copy-paste-and-links.html"><span class="dot"></span>Copy, paste and links</a><a class="item" data-id="screenshots" href="screenshots.html"><span class="dot"></span>Screenshots</a></div>
+      <div class="space" style="--c:#b48cff"><button class="space-head" type="button" data-ch="Organising your work" aria-expanded="true"><span class="chev">⌄</span>Organising your work<span class="sum">3</span></button><a class="item" data-id="spaces-and-cards" href="spaces-and-cards.html"><span class="dot"></span>Spaces and cards</a><a class="item" data-id="projects" href="projects.html"><span class="dot"></span>Projects</a><a class="item" data-id="notifications-and-activity" href="notifications-and-activity.html"><span class="dot"></span>Notifications and activity</a></div>
+      <div class="space" style="--c:#e8b04a"><button class="space-head" type="button" data-ch="Servers" aria-expanded="true"><span class="chev">⌄</span>Servers<span class="sum">4</span></button><a class="item" data-id="adding-a-server" href="adding-a-server.html"><span class="dot"></span>Adding a server</a><a class="item" data-id="keys-and-putty-sessions" href="keys-and-putty-sessions.html"><span class="dot"></span>Keys and PuTTY sessions</a><a class="item" data-id="tmux-sessions" href="tmux-sessions.html"><span class="dot"></span>tmux sessions</a><a class="item sel" aria-current="page" data-id="copying-files" href="copying-files.html"><span class="dot"></span>Copying files</a></div>
+      <div class="space" style="--c:#e5484d"><button class="space-head" type="button" data-ch="Claude Code" aria-expanded="true"><span class="chev">⌄</span>Claude Code<span class="sum">4</span></button><a class="item" data-id="claude-in-a-tab" href="claude-in-a-tab.html"><span class="dot"></span>Claude in a tab</a><a class="item" data-id="roles-and-handovers" href="roles-and-handovers.html"><span class="dot"></span>Roles and handovers</a><a class="item" data-id="reading-other-tabs" href="reading-other-tabs.html"><span class="dot"></span>Reading other tabs</a><a class="item" data-id="subagents-and-skills" href="subagents-and-skills.html"><span class="dot"></span>Subagents and skills</a></div>
+      <div class="space" style="--c:#9a9aa0"><button class="space-head" type="button" data-ch="Extensions" aria-expanded="true"><span class="chev">⌄</span>Extensions<span class="sum">2</span></button><a class="item" data-id="using-extensions" href="using-extensions.html"><span class="dot"></span>Using extensions</a><a class="item" data-id="making-an-extension" href="making-an-extension.html"><span class="dot"></span>Making one</a></div>
+      <div class="space" style="--c:#9a9aa0"><button class="space-head" type="button" data-ch="Reference" aria-expanded="true"><span class="chev">⌄</span>Reference<span class="sum">4</span></button><a class="item" data-id="all-shortcuts" href="all-shortcuts.html"><span class="dot"></span>All shortcuts</a><a class="item" data-id="menus" href="menus.html"><span class="dot"></span>Menus</a><a class="item" data-id="settings" href="settings.html"><span class="dot"></span>Settings</a><a class="item" data-id="files-vyberun-uses" href="files-vyberun-uses.html"><span class="dot"></span>Files vyberun uses</a></div>
+      <div class="space" style="--c:#9a9aa0"><button class="space-head" type="button" data-ch="Troubleshooting" aria-expanded="true"><span class="chev">⌄</span>Troubleshooting<span class="sum">3</span></button><a class="item" data-id="common-problems" href="common-problems.html"><span class="dot"></span>Common problems</a><a class="item" data-id="logs" href="logs.html"><span class="dot"></span>Logs</a><a class="item" data-id="reporting-a-problem" href="reporting-a-problem.html"><span class="dot"></span>Reporting a problem</a></div>
+    </nav>
+
+    <div class="main">
+      <div class="tabrow" id="tabs"></div>
+      <div class="panes">
+        <div class="page" id="page">
+          <div class="cmd" aria-hidden="true"><span class="ps">PS C:\&gt; </span><span class="c">vyberun help copying-files</span> <span class="cursor"></span></div>
+          <article data-topic="copying-files">
+            <div class="crumbs"><a href="./">Manual</a> › Servers</div>
+            <h1>Copying files</h1>
+            <p class="lead">Copy files to and from a server without leaving the terminal.</p>
+            <h2 id="download">From a server</h2>
+            <ol class="steps"><li>Hold <kbd>Ctrl</kbd> and click a file's name in the server's tab. File names are underlined while <kbd>Ctrl</kbd> is held.</li><li>vyberun checks with the server that it's a file, then offers where it goes: the place your last download went (first in the list: <kbd>Enter</kbd> takes it), a local tab (into the folder it's in), Downloads, or any folder.</li></ol>
+            <p>A highlighted path works too: <kbd>Ctrl</kbd>+right-click ▸ <span class="ui">Download to</span>.</p>
+            <figure class="scene" role="img" aria-label="Ctrl+click a file's name, choose where it goes, and the copy runs under the terminal."><div class="sc-stage"><style>
+  /* a file from the server: hold Ctrl and click its name, pick where it goes, and the copy runs under the terminal */
+.s-download-file .u { animation-name: s-download-file-25312; }
+  @keyframes s-download-file-25312 { 0%,8%{text-decoration-color:transparent}12%,30%{text-decoration-color:#8ab4ff}34%,100%{text-decoration-color:transparent} }
+  .s-download-file .keys { animation-name: s-download-file-678024; }
+  @keyframes s-download-file-678024 { 0%,6%{opacity:0}10%,30%{opacity:1}34%,100%{opacity:0} }
+  .s-download-file .menu { animation-name: s-download-file-807287; }
+  @keyframes s-download-file-807287 { 0%,30%{opacity:0}34%,52%{opacity:1}55%,100%{opacity:0} }
+  .s-download-file .bar { animation-name: s-download-file-842601; }
+  @keyframes s-download-file-842601 { 0%,54%{opacity:0}58%,96%{opacity:1}100%{opacity:0} }
+  .s-download-file .fill { animation-name: s-download-file-847248; }
+  @keyframes s-download-file-847248 { 0%,58%{width:0}90%,100%{width:100%} }
+</style>
+<div class="s-download-file sc-anim" style="position:absolute; inset:0">
+<div class="sc-win" style="inset:5% 6% 5% 6%"><div class="sc-bar"><b><span class="logo"></span>vyberun</b><span>File</span><span>View</span><span>Terminal</span><span>Help</span><span class="ctl">─☐✕</span></div><div class="sc-body"><div class="sc-side"><div class="sc-space " style="--c:#5c5c62"><div class="h">Servers</div><div class="r" style="--d:#4ec98a"><i></i>shop-staging</div></div></div><div class="sc-main" style="position:relative"><div class="sc-tabs"><span class="sc-tab on "><i style="--d:#4ec98a"></i>shop-staging</span></div><div class="sc-term " style=""><span class="g">dev@shop-staging</span>:~/exports$ ls -lh
+-rw-r--r-- 1 dev dev 2.1K orders.csv
+-rw-r--r-- 1 dev dev  38M <span class="u" style="text-decoration:underline;text-decoration-color:transparent">products.csv</span>
+-rw-r--r-- 1 dev dev 4.0K README</div><div class="bar" style="position:absolute;left:0;right:0;bottom:0;padding:.3em .9em;border-top:1px solid #2a2a2e;background:#18181a;font-size:.75em;display:flex;gap:.8em;align-items:center">↓ products.csv<span style="flex:1;height:.4em;background:#2a2a2e;border-radius:99em;overflow:hidden"><span class="fill" style="display:block;height:100%;background:#6ea8fe"></span></span><span style="color:#8d8d93">Pause · Cancel</span></div></div></div></div><div class="sc-menu menu" style="left:44%;top:47%;min-width:13em"><div class="g">⬇  Download to</div><div class="hl dl">Downloads <span class="g">Enter</span></div><div>shop-api (a local tab's folder)</div><div>Choose a folder…</div></div><div class="sc-keys keys" style="left:14%;top:70%;font-size:1.2em"><kbd>Ctrl</kbd> + click</div>
+<div class="sc-ptr" data-path="8:.u|30:.u|44:.dl|52:.dl|58:-"></div>
+</div></div><figcaption>Ctrl+click a file's name, choose where it goes, and the copy runs under the terminal.</figcaption></figure>
+            <h2 id="upload">To a server</h2>
+            <ul><li>Drop files on the server's tab. They go into the folder that tab is in.</li><li>Or <kbd>Ctrl</kbd>+right-click in the server's tab ▸ <span class="ui">Upload a file here…</span>.</li><li>Or, in a local tab, highlight a file's name and <kbd>Ctrl</kbd>+right-click ▸ <span class="ui">Upload to</span> ▸ a server. It goes into the folder that server's tab is in, or, with <span class="ui">Choose a server…</span>, its home folder.</li></ul>
+            <p>Folders can't be uploaded as they are: right-click the folder in File Explorer ▸ <span class="ui">Compress to ZIP</span> and drop the zip.</p>
+            <p>When a file of that name is already there, vyberun asks: keep both (the new one saved as <code>name-1</code>) or replace it. On a <a class="link" href="adding-a-server.html#production">production server</a>, every upload asks first.</p>
+            <h2 id="progress">While it copies</h2>
+            <p>A line under the terminal shows the progress, with <span class="ui">Pause</span> and <span class="ui">Cancel</span>.</p>
+            <ul><li>If the connection drops, what's copied so far is kept, and vyberun tries again by itself, carrying on from there.</li><li>A resumed copy is checked against the original (SHA-256) before it gets its name, so a file is never half right.</li><li>Closed vyberun in the middle of a copy? It's offered again when vyberun starts: <span class="ui">Resume</span> or <span class="ui">Discard</span>.</li></ul>
+            <p>Copies sign in the same way as the server's tabs: its key or its remembered password.</p>
+            <div class="pager"><a href="tmux-sessions.html"><small>‹ Previous</small>tmux sessions</a><a class="next" href="claude-in-a-tab.html"><small>Next ›</small>Claude in a tab</a></div>
+          </article>
+        </div>
+        <aside class="onpage" id="onpage" aria-label="On this page"><div class="h"># on this page</div><a href="#download">From a server</a><a href="#upload">To a server</a><a href="#progress">While it copies</a></aside>
+      </div>
+    </div>
+  </div>
+  <div class="status"><span>vyberun manual · applies to 0.1.10</span><span class="hide-sm" id="count"></span><a class="r" href="https://github.com/xnoire666/vyberun-releases/issues">Report a mistake</a></div>
+</div>
+<script>window.MANUAL = {"id":"copying-files","topics":{"all-shortcuts":{"c":"#9a9aa0","title":"All shortcuts","ch":"Reference"},"roles-and-handovers":{"c":"#e5484d","title":"Roles and handovers","ch":"Claude Code"},"installing":{"c":"#4ec98a","title":"Installing","ch":"Getting started"},"logs":{"c":"#9a9aa0","title":"Logs","ch":"Troubleshooting"},"settings":{"c":"#9a9aa0","title":"Settings","ch":"Reference"},"files-vyberun-uses":{"c":"#9a9aa0","title":"Files vyberun uses","ch":"Reference"},"split-panes":{"c":"#6ea8fe","title":"Split panes","ch":"The terminal"},"updating-and-uninstalling":{"c":"#4ec98a","title":"Updating and uninstalling","ch":"Getting started"},"find-and-search":{"c":"#6ea8fe","title":"Find and search","ch":"The terminal"},"projects":{"c":"#b48cff","title":"Projects","ch":"Organising your work"},"notifications-and-activity":{"c":"#b48cff","title":"Notifications and activity","ch":"Organising your work"},"using-extensions":{"c":"#9a9aa0","title":"Using extensions","ch":"Extensions"},"spaces-and-cards":{"c":"#b48cff","title":"Spaces and cards","ch":"Organising your work"},"tabs-and-shells":{"c":"#6ea8fe","title":"Tabs and shells","ch":"The terminal"},"what-vyberun-is":{"c":"#4ec98a","title":"What vyberun is","ch":"Getting started"},"making-an-extension":{"c":"#9a9aa0","title":"Making one","ch":"Extensions"},"tmux-sessions":{"c":"#e8b04a","title":"tmux sessions","ch":"Servers"},"sessions-that-survive":{"c":"#6ea8fe","title":"Sessions that survive","ch":"The terminal"},"common-problems":{"c":"#9a9aa0","title":"Common problems","ch":"Troubleshooting"},"copying-files":{"c":"#e8b04a","title":"Copying files","ch":"Servers"},"claude-in-a-tab":{"c":"#e5484d","title":"Claude in a tab","ch":"Claude Code"},"keys-and-putty-sessions":{"c":"#e8b04a","title":"Keys and PuTTY sessions","ch":"Servers"},"adding-a-server":{"c":"#e8b04a","title":"Adding a server","ch":"Servers"},"copy-paste-and-links":{"c":"#6ea8fe","title":"Copy, paste and links","ch":"The terminal"},"reading-other-tabs":{"c":"#e5484d","title":"Reading other tabs","ch":"Claude Code"},"screenshots":{"c":"#6ea8fe","title":"Screenshots","ch":"The terminal"},"reporting-a-problem":{"c":"#9a9aa0","title":"Reporting a problem","ch":"Troubleshooting"},"subagents-and-skills":{"c":"#e5484d","title":"Subagents and skills","ch":"Claude Code"},"menus":{"c":"#9a9aa0","title":"Menus","ch":"Reference"},"the-window":{"c":"#4ec98a","title":"The window","ch":"Getting started"}}};</script>
+<script src="manual.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Screenshots · vyberun manual</title>
+<meta name="description" content="Taking screenshots in vyberun: a selection, a long screenshot of a whole output or Claude Code conversation, marking it up, copying and saving.">
+<link rel="icon" href="../img/logo.png">
+<link rel="stylesheet" href="manual.css">
+</head>
+<body>
+<div class="win">
+  <div class="titlebar">
+    <a class="brand" href="./"><img src="../img/logo.png" alt="">vyberun <span>manual</span></a>
+    <span class="menu"><a href="../">Home</a><a href="https://github.com/xnoire666/vyberun-releases/releases">Releases</a><a href="https://github.com/xnoire666/vyberun-releases/issues">Support</a></span>
+    <div class="search" id="search">
+      <span class="ico">⌕</span><input id="q" type="search" placeholder="Search the manual" autocomplete="off" spellcheck="false" aria-label="Search the manual" aria-controls="results"><kbd>/</kbd>
+      <div class="results" id="results" role="listbox" hidden></div>
+    </div>
+    <button class="contents-btn" id="contents-btn" type="button">Contents</button>
+    <a class="get" href="https://apps.microsoft.com/detail/9MX9G62RFFQ5">Get vyberun</a>
+    <span class="controls" aria-hidden="true">─☐✕</span>
+  </div>
+
+  <div class="body">
+    <nav class="side" id="side" aria-label="Contents">
+      <div class="space" style="--c:#4ec98a"><button class="space-head" type="button" data-ch="Getting started" aria-expanded="true"><span class="chev">⌄</span>Getting started<span class="sum">4</span></button><a class="item" data-id="what-vyberun-is" href="what-vyberun-is.html"><span class="dot"></span>What vyberun is</a><a class="item" data-id="installing" href="installing.html"><span class="dot"></span>Installing</a><a class="item" data-id="updating-and-uninstalling" href="updating-and-uninstalling.html"><span class="dot"></span>Updating and uninstalling</a><a class="item" data-id="the-window" href="the-window.html"><span class="dot"></span>The window</a></div>
+      <div class="space" style="--c:#6ea8fe"><button class="space-head" type="button" data-ch="The terminal" aria-expanded="true"><span class="chev">⌄</span>The terminal<span class="sum">6</span></button><a class="item" data-id="tabs-and-shells" href="tabs-and-shells.html"><span class="dot"></span>Tabs and shells</a><a class="item" data-id="split-panes" href="split-panes.html"><span class="dot"></span>Split panes</a><a class="item" data-id="sessions-that-survive" href="sessions-that-survive.html"><span class="dot"></span>Sessions that survive</a><a class="item" data-id="find-and-search" href="find-and-search.html"><span class="dot"></span>Find and search</a><a class="item" data-id="copy-paste-and-links" href="copy-paste-and-links.html"><span class="dot"></span>Copy, paste and links</a><a class="item sel" aria-current="page" data-id="screenshots" href="screenshots.html"><span class="dot"></span>Screenshots</a></div>
+      <div class="space" style="--c:#b48cff"><button class="space-head" type="button" data-ch="Organising your work" aria-expanded="true"><span class="chev">⌄</span>Organising your work<span class="sum">3</span></button><a class="item" data-id="spaces-and-cards" href="spaces-and-cards.html"><span class="dot"></span>Spaces and cards</a><a class="item" data-id="projects" href="projects.html"><span class="dot"></span>Projects</a><a class="item" data-id="notifications-and-activity" href="notifications-and-activity.html"><span class="dot"></span>Notifications and activity</a></div>
+      <div class="space" style="--c:#e8b04a"><button class="space-head" type="button" data-ch="Servers" aria-expanded="true"><span class="chev">⌄</span>Servers<span class="sum">4</span></button><a class="item" data-id="adding-a-server" href="adding-a-server.html"><span class="dot"></span>Adding a server</a><a class="item" data-id="keys-and-putty-sessions" href="keys-and-putty-sessions.html"><span class="dot"></span>Keys and PuTTY sessions</a><a class="item" data-id="tmux-sessions" href="tmux-sessions.html"><span class="dot"></span>tmux sessions</a><a class="item" data-id="copying-files" href="copying-files.html"><span class="dot"></span>Copying files</a></div>
+      <div class="space" style="--c:#e5484d"><button class="space-head" type="button" data-ch="Claude Code" aria-expanded="true"><span class="chev">⌄</span>Claude Code<span class="sum">4</span></button><a class="item" data-id="claude-in-a-tab" href="claude-in-a-tab.html"><span class="dot"></span>Claude in a tab</a><a class="item" data-id="roles-and-handovers" href="roles-and-handovers.html"><span class="dot"></span>Roles and handovers</a><a class="item" data-id="reading-other-tabs" href="reading-other-tabs.html"><span class="dot"></span>Reading other tabs</a><a class="item" data-id="subagents-and-skills" href="subagents-and-skills.html"><span class="dot"></span>Subagents and skills</a></div>
+      <div class="space" style="--c:#9a9aa0"><button class="space-head" type="button" data-ch="Extensions" aria-expanded="true"><span class="chev">⌄</span>Extensions<span class="sum">2</span></button><a class="item" data-id="using-extensions" href="using-extensions.html"><span class="dot"></span>Using extensions</a><a class="item" data-id="making-an-extension" href="making-an-extension.html"><span class="dot"></span>Making one</a></div>
+      <div class="space" style="--c:#9a9aa0"><button class="space-head" type="button" data-ch="Reference" aria-expanded="true"><span class="chev">⌄</span>Reference<span class="sum">4</span></button><a class="item" data-id="all-shortcuts" href="all-shortcuts.html"><span class="dot"></span>All shortcuts</a><a class="item" data-id="menus" href="menus.html"><span class="dot"></span>Menus</a><a class="item" data-id="settings" href="settings.html"><span class="dot"></span>Settings</a><a class="item" data-id="files-vyberun-uses" href="files-vyberun-uses.html"><span class="dot"></span>Files vyberun uses</a></div>
+      <div class="space" style="--c:#9a9aa0"><button class="space-head" type="button" data-ch="Troubleshooting" aria-expanded="true"><span class="chev">⌄</span>Troubleshooting<span class="sum">3</span></button><a class="item" data-id="common-problems" href="common-problems.html"><span class="dot"></span>Common problems</a><a class="item" data-id="logs" href="logs.html"><span class="dot"></span>Logs</a><a class="item" data-id="reporting-a-problem" href="reporting-a-problem.html"><span class="dot"></span>Reporting a problem</a></div>
+    </nav>
+
+    <div class="main">
+      <div class="tabrow" id="tabs"></div>
+      <div class="panes">
+        <div class="page" id="page">
+          <div class="cmd" aria-hidden="true"><span class="ps">PS C:\&gt; </span><span class="c">vyberun help screenshots</span> <span class="cursor"></span></div>
+          <article data-topic="screenshots">
+            <div class="crumbs"><a href="./">Manual</a> › The terminal</div>
+            <h1>Screenshots</h1>
+            <p class="lead">Turn what's in a terminal into a picture, mark it up and share it.</p>
+            <h2 id="selection">A screenshot of some lines</h2>
+            <ol class="steps"><li>Highlight the lines.</li><li>Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd>.</li></ol>
+            <p>The picture is copied, and its preview opens so you can mark it up.</p>
+            <figure class="scene" role="img" aria-label="Ctrl+Shift+I, then the highlighter in the preview."><div class="sc-stage"><style>
+  /* highlight, Ctrl+Shift+I, then mark the line that matters in the preview */
+.s-screenshot-markup .sc-sel { animation-name: s-screenshot-markup-266166; }
+  @keyframes s-screenshot-markup-266166 { 0%,6%{background:transparent}10%,100%{background:rgba(110,168,254,.35)} }
+  .s-screenshot-markup .keys { animation-name: s-screenshot-markup-678024; }
+  @keyframes s-screenshot-markup-678024 { 0%,14%{opacity:0}18%,32%{opacity:1}36%,100%{opacity:0} }
+  .s-screenshot-markup .prev { animation-name: s-screenshot-markup-437297; }
+  @keyframes s-screenshot-markup-437297 { 0%,34%{opacity:0;transform:scale(.92)}40%,94%{opacity:1;transform:none}98%,100%{opacity:0} }
+  .s-screenshot-markup .stroke { animation-name: s-screenshot-markup-273326; }
+  @keyframes s-screenshot-markup-273326 { 0%,52%{width:0}66%,100%{width:62%} }
+  .s-screenshot-markup .done { animation-name: s-screenshot-markup-691279; }
+  @keyframes s-screenshot-markup-691279 { 0%,74%{opacity:0}78%,94%{opacity:1}98%,100%{opacity:0} }
+</style>
+<div class="s-screenshot-markup sc-anim" style="position:absolute; inset:0">
+<div class="sc-win" style="inset:5% 6% 5% 6%"><div class="sc-bar"><b><span class="logo"></span>vyberun</b><span>File</span><span>View</span><span>Terminal</span><span>Help</span><span class="ctl">─☐✕</span></div><div class="sc-body"><div class="sc-side"><div class="sc-space " style="--c:#e5484d"><div class="h">SHOP-142 Checkout</div><div class="r" style="--d:#6ea8fe"><i></i>shop-api</div></div></div><div class="sc-main" style="position:relative"><div class="sc-tabs"><span class="sc-tab on ">tests</span></div><div class="sc-term " style=""><span class="p">PS C:\work\shop\shop-api&gt;</span> php artisan test
+<span class="sc-sel">  FAIL  Tests\Feature\CheckoutTest
+  ✕ rejects an empty cart
+  Expected status 422, got 500.</span>
+  Tests: 1 failed, 11 passed</div></div></div></div><div class="sc-keys keys" style="left:50%;top:72%;transform:translateX(-50%);font-size:1.3em"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd></div><div class="prev" style="position:absolute;left:22%;top:16%;width:56%;background:#1b1b1e;border:1px solid #3a3a40;border-radius:.5em;padding:.6em;box-shadow:0 1em 3em rgba(0,0,0,.6)"><div style="font-size:.75em;color:#8d8d93;display:flex;gap:.8em;margin-bottom:.4em"><span>P</span><span style="color:#e8b04a">H</span><span>R</span><span>O</span><span>E</span><span>C</span><span style="margin-left:auto">Framed · Plain</span></div><div style="position:relative;background:#0c0c0d;border-radius:.3em;padding:.5em .7em;font:.8em/1.6 var(--mono);color:#cfcfcf;white-space:pre">  FAIL  Tests\Feature\CheckoutTest
+  ✕ rejects an empty cart
+  Expected status 422, got 500.<span class="stroke" style="position:absolute;left:.4em;top:3.7em;height:1.5em;background:rgba(232,176,74,.45);border-radius:.2em"></span></div><div class="done" style="font-size:.75em;color:#4ec98a;margin-top:.4em">✓ Copied: paste it anywhere (Ctrl+S saves it)</div></div>
+
+</div></div><figcaption>Ctrl+Shift+I, then the highlighter in the preview.</figcaption></figure>
+            <h2 id="long">A long screenshot</h2>
+            <p>For more than fits on the screen: drag past the bottom of the window (it scrolls as you go), then press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>K</kbd>. Everything you highlighted becomes one picture.</p>
+            <h2 id="claude">In Claude Code</h2>
+            <p>Claude Code redraws its screen, so there are two ways:</p>
+            <p><span class="ui">Only what's on Claude's screen,</span> with collapsed output left collapsed:</p>
+            <ol class="steps"><li>Highlight a line or two where the picture should start, and press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>K</kbd>. The start is marked.</li><li>Scroll to where it should end, highlight a line or two there, and press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>K</kbd> again.</li><li>Wait while the screen is dimmed: vyberun scrolls Claude's view from one to the other and joins it.</li></ol>
+            <p>To take just what's highlighted on the screen, press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>K</kbd> twice without highlighting anything new in between.</p>
+            <p><span class="ui">Everything, with the commands' full output:</span></p>
+            <ol class="steps"><li>With nothing highlighted, press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd>. Screenshot mode puts the whole conversation in the terminal, even what Claude's screen hides.</li><li>Highlight any part, as long as you like.</li><li><kbd>Enter</kbd> takes it. <kbd>Esc</kbd> goes back to Claude without one.</li></ol>
+            <h2 id="server">In a server tab</h2>
+            <p>In a server tab, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd> with nothing highlighted brings the tab's whole history from the server, so you can highlight past the screen. This works when the server keeps it with tmux. A server you sign in to with a password can't be asked this way: hold <kbd>Shift</kbd> and drag to highlight what's on screen.</p>
+            <h2 id="markup">Marking it up</h2>
+            <p>In the preview:</p>
+            <div class="tablewrap"><table><tr><th>Key</th><th>Tool</th></tr><tr><td><kbd>P</kbd></td><td>Pen</td></tr><tr><td><kbd>H</kbd></td><td>Highlighter</td></tr><tr><td><kbd>R</kbd></td><td>Box</td></tr><tr><td><kbd>O</kbd></td><td>Circle</td></tr><tr><td><kbd>E</kbd></td><td>Eraser</td></tr><tr><td><kbd>C</kbd></td><td>Crop: drag around the part that matters</td></tr><tr><td><kbd>Ctrl</kbd>+<kbd>Z</kbd></td><td>Undo the last mark or crop</td></tr></table></div>
+            <p>To look around a picture larger than the window, hold <kbd>V</kbd> or <kbd>Ctrl</kbd> and drag. <kbd>Ctrl</kbd>+<kbd>=</kbd>, <kbd>Ctrl</kbd>+<kbd>-</kbd>, <kbd>Ctrl</kbd>+<kbd>0</kbd> and <kbd>Ctrl</kbd>+<kbd>1</kbd> zoom in, zoom out, fit the window and show it at actual size.</p>
+            <h2 id="copy-save">Copying and saving</h2>
+            <ul><li><kbd>Ctrl</kbd>+<kbd>C</kbd> copies the picture with your marks. Paste it anywhere, or straight into Claude Code.</li><li><kbd>Ctrl</kbd>+<kbd>S</kbd> saves it as a PNG file.</li><li><kbd>Esc</kbd> closes the preview.</li></ul>
+            <p><span class="ui">Settings ▸ Screenshots ▸ Frame the screenshots</span> puts a soft frame and shadow around them. The preview's <span class="ui">Framed</span> and <span class="ui">Plain</span> switch does the same for one picture.</p>
+            <div class="pager"><a href="copy-paste-and-links.html"><small>‹ Previous</small>Copy, paste and links</a><a class="next" href="spaces-and-cards.html"><small>Next ›</small>Spaces and cards</a></div>
+          </article>
+        </div>
+        <aside class="onpage" id="onpage" aria-label="On this page"><div class="h"># on this page</div><a href="#selection">A screenshot of some lines</a><a href="#long">A long screenshot</a><a href="#claude">In Claude Code</a><a href="#server">In a server tab</a><a href="#markup">Marking it up</a><a href="#copy-save">Copying and saving</a></aside>
+      </div>
+    </div>
+  </div>
+  <div class="status"><span>vyberun manual · applies to 0.1.10</span><span class="hide-sm" id="count"></span><a class="r" href="https://github.com/xnoire666/vyberun-releases/issues">Report a mistake</a></div>
+</div>
+<script>window.MANUAL = {"id":"screenshots","topics":{"all-shortcuts":{"c":"#9a9aa0","title":"All shortcuts","ch":"Reference"},"roles-and-handovers":{"c":"#e5484d","title":"Roles and handovers","ch":"Claude Code"},"installing":{"c":"#4ec98a","title":"Installing","ch":"Getting started"},"logs":{"c":"#9a9aa0","title":"Logs","ch":"Troubleshooting"},"settings":{"c":"#9a9aa0","title":"Settings","ch":"Reference"},"files-vyberun-uses":{"c":"#9a9aa0","title":"Files vyberun uses","ch":"Reference"},"split-panes":{"c":"#6ea8fe","title":"Split panes","ch":"The terminal"},"updating-and-uninstalling":{"c":"#4ec98a","title":"Updating and uninstalling","ch":"Getting started"},"find-and-search":{"c":"#6ea8fe","title":"Find and search","ch":"The terminal"},"projects":{"c":"#b48cff","title":"Projects","ch":"Organising your work"},"notifications-and-activity":{"c":"#b48cff","title":"Notifications and activity","ch":"Organising your work"},"using-extensions":{"c":"#9a9aa0","title":"Using extensions","ch":"Extensions"},"spaces-and-cards":{"c":"#b48cff","title":"Spaces and cards","ch":"Organising your work"},"tabs-and-shells":{"c":"#6ea8fe","title":"Tabs and shells","ch":"The terminal"},"what-vyberun-is":{"c":"#4ec98a","title":"What vyberun is","ch":"Getting started"},"making-an-extension":{"c":"#9a9aa0","title":"Making one","ch":"Extensions"},"tmux-sessions":{"c":"#e8b04a","title":"tmux sessions","ch":"Servers"},"sessions-that-survive":{"c":"#6ea8fe","title":"Sessions that survive","ch":"The terminal"},"common-problems":{"c":"#9a9aa0","title":"Common problems","ch":"Troubleshooting"},"copying-files":{"c":"#e8b04a","title":"Copying files","ch":"Servers"},"claude-in-a-tab":{"c":"#e5484d","title":"Claude in a tab","ch":"Claude Code"},"keys-and-putty-sessions":{"c":"#e8b04a","title":"Keys and PuTTY sessions","ch":"Servers"},"adding-a-server":{"c":"#e8b04a","title":"Adding a server","ch":"Servers"},"copy-paste-and-links":{"c":"#6ea8fe","title":"Copy, paste and links","ch":"The terminal"},"reading-other-tabs":{"c":"#e5484d","title":"Reading other tabs","ch":"Claude Code"},"screenshots":{"c":"#6ea8fe","title":"Screenshots","ch":"The terminal"},"reporting-a-problem":{"c":"#9a9aa0","title":"Reporting a problem","ch":"Troubleshooting"},"subagents-and-skills":{"c":"#e5484d","title":"Subagents and skills","ch":"Claude Code"},"menus":{"c":"#9a9aa0","title":"Menus","ch":"Reference"},"the-window":{"c":"#4ec98a","title":"The window","ch":"Getting started"}}};</script>
+<script src="manual.js"></script>
+</body>
+</html>

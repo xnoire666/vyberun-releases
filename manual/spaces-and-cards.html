@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spaces and cards · vyberun manual</title>
+<meta name="description" content="Organising vyberun's sidebar: spaces, cards, moving and ordering them, colours and icons, links, recent work, and archiving a space.">
+<link rel="icon" href="../img/logo.png">
+<link rel="stylesheet" href="manual.css">
+</head>
+<body>
+<div class="win">
+  <div class="titlebar">
+    <a class="brand" href="./"><img src="../img/logo.png" alt="">vyberun <span>manual</span></a>
+    <span class="menu"><a href="../">Home</a><a href="https://github.com/xnoire666/vyberun-releases/releases">Releases</a><a href="https://github.com/xnoire666/vyberun-releases/issues">Support</a></span>
+    <div class="search" id="search">
+      <span class="ico">⌕</span><input id="q" type="search" placeholder="Search the manual" autocomplete="off" spellcheck="false" aria-label="Search the manual" aria-controls="results"><kbd>/</kbd>
+      <div class="results" id="results" role="listbox" hidden></div>
+    </div>
+    <button class="contents-btn" id="contents-btn" type="button">Contents</button>
+    <a class="get" href="https://apps.microsoft.com/detail/9MX9G62RFFQ5">Get vyberun</a>
+    <span class="controls" aria-hidden="true">─☐✕</span>
+  </div>
+
+  <div class="body">
+    <nav class="side" id="side" aria-label="Contents">
+      <div class="space" style="--c:#4ec98a"><button class="space-head" type="button" data-ch="Getting started" aria-expanded="true"><span class="chev">⌄</span>Getting started<span class="sum">4</span></button><a class="item" data-id="what-vyberun-is" href="what-vyberun-is.html"><span class="dot"></span>What vyberun is</a><a class="item" data-id="installing" href="installing.html"><span class="dot"></span>Installing</a><a class="item" data-id="updating-and-uninstalling" href="updating-and-uninstalling.html"><span class="dot"></span>Updating and uninstalling</a><a class="item" data-id="the-window" href="the-window.html"><span class="dot"></span>The window</a></div>
+      <div class="space" style="--c:#6ea8fe"><button class="space-head" type="button" data-ch="The terminal" aria-expanded="true"><span class="chev">⌄</span>The terminal<span class="sum">6</span></button><a class="item" data-id="tabs-and-shells" href="tabs-and-shells.html"><span class="dot"></span>Tabs and shells</a><a class="item" data-id="split-panes" href="split-panes.html"><span class="dot"></span>Split panes</a><a class="item" data-id="sessions-that-survive" href="sessions-that-survive.html"><span class="dot"></span>Sessions that survive</a><a class="item" data-id="find-and-search" href="find-and-search.html"><span class="dot"></span>Find and search</a><a class="item" data-id="copy-paste-and-links" href="copy-paste-and-links.html"><span class="dot"></span>Copy, paste and links</a><a class="item" data-id="screenshots" href="screenshots.html"><span class="dot"></span>Screenshots</a></div>
+      <div class="space" style="--c:#b48cff"><button class="space-head" type="button" data-ch="Organising your work" aria-expanded="true"><span class="chev">⌄</span>Organising your work<span class="sum">3</span></button><a class="item sel" aria-current="page" data-id="spaces-and-cards" href="spaces-and-cards.html"><span class="dot"></span>Spaces and cards</a><a class="item" data-id="projects" href="projects.html"><span class="dot"></span>Projects</a><a class="item" data-id="notifications-and-activity" href="notifications-and-activity.html"><span class="dot"></span>Notifications and activity</a></div>
+      <div class="space" style="--c:#e8b04a"><button class="space-head" type="button" data-ch="Servers" aria-expanded="true"><span class="chev">⌄</span>Servers<span class="sum">4</span></button><a class="item" data-id="adding-a-server" href="adding-a-server.html"><span class="dot"></span>Adding a server</a><a class="item" data-id="keys-and-putty-sessions" href="keys-and-putty-sessions.html"><span class="dot"></span>Keys and PuTTY sessions</a><a class="item" data-id="tmux-sessions" href="tmux-sessions.html"><span class="dot"></span>tmux sessions</a><a class="item" data-id="copying-files" href="copying-files.html"><span class="dot"></span>Copying files</a></div>
+      <div class="space" style="--c:#e5484d"><button class="space-head" type="button" data-ch="Claude Code" aria-expanded="true"><span class="chev">⌄</span>Claude Code<span class="sum">4</span></button><a class="item" data-id="claude-in-a-tab" href="claude-in-a-tab.html"><span class="dot"></span>Claude in a tab</a><a class="item" data-id="roles-and-handovers" href="roles-and-handovers.html"><span class="dot"></span>Roles and handovers</a><a class="item" data-id="reading-other-tabs" href="reading-other-tabs.html"><span class="dot"></span>Reading other tabs</a><a class="item" data-id="subagents-and-skills" href="subagents-and-skills.html"><span class="dot"></span>Subagents and skills</a></div>
+      <div class="space" style="--c:#9a9aa0"><button class="space-head" type="button" data-ch="Extensions" aria-expanded="true"><span class="chev">⌄</span>Extensions<span class="sum">2</span></button><a class="item" data-id="using-extensions" href="using-extensions.html"><span class="dot"></span>Using extensions</a><a class="item" data-id="making-an-extension" href="making-an-extension.html"><span class="dot"></span>Making one</a></div>
+      <div class="space" style="--c:#9a9aa0"><button class="space-head" type="button" data-ch="Reference" aria-expanded="true"><span class="chev">⌄</span>Reference<span class="sum">4</span></button><a class="item" data-id="all-shortcuts" href="all-shortcuts.html"><span class="dot"></span>All shortcuts</a><a class="item" data-id="menus" href="menus.html"><span class="dot"></span>Menus</a><a class="item" data-id="settings" href="settings.html"><span class="dot"></span>Settings</a><a class="item" data-id="files-vyberun-uses" href="files-vyberun-uses.html"><span class="dot"></span>Files vyberun uses</a></div>
+      <div class="space" style="--c:#9a9aa0"><button class="space-head" type="button" data-ch="Troubleshooting" aria-expanded="true"><span class="chev">⌄</span>Troubleshooting<span class="sum">3</span></button><a class="item" data-id="common-problems" href="common-problems.html"><span class="dot"></span>Common problems</a><a class="item" data-id="logs" href="logs.html"><span class="dot"></span>Logs</a><a class="item" data-id="reporting-a-problem" href="reporting-a-problem.html"><span class="dot"></span>Reporting a problem</a></div>
+    </nav>
+
+    <div class="main">
+      <div class="tabrow" id="tabs"></div>
+      <div class="panes">
+        <div class="page" id="page">
+          <div class="cmd" aria-hidden="true"><span class="ps">PS C:\&gt; </span><span class="c">vyberun help spaces-and-cards</span> <span class="cursor"></span></div>
+          <article data-topic="spaces-and-cards">
+            <div class="crumbs"><a href="./">Manual</a> › Organising your work</div>
+            <h1>Spaces and cards</h1>
+            <p class="lead">Group your projects, terminals and servers the way you work.</p>
+            <figure><img src="img/team.png" alt="The sidebar with two spaces" loading="lazy"><figcaption>Two spaces, one per ticket. A card's tabs are listed under it with their roles.</figcaption></figure>
+            <h2 id="spaces">Spaces</h2>
+            <p>A space is a group of cards, for example one per ticket, client or product. Make as many as you like.</p>
+            <ol class="steps"><li>Click <span class="ui">+</span> at the top of the sidebar, next to <span class="ui">Search spaces</span>.</li><li>Name the space.</li><li>Put cards in it: hold <kbd>Ctrl</kbd> and drag a card onto it, or click <span class="ui">⋯</span> on the card ▸ <span class="ui">Move to space</span>.</li></ol>
+            <figure class="scene" role="img" aria-label="A space of your own, then Ctrl+drag a card into it."><div class="sc-stage"><style>
+  /* a space of your own: + at the top of the sidebar, then hold Ctrl and drag a card into it */
+.s-new-space .menu { animation-name: s-new-space-807287; }
+  @keyframes s-new-space-807287 { 0%,10%{opacity:0}13%,24%{opacity:1}27%,100%{opacity:0} }
+  .s-new-space .sp2 { animation-name: s-new-space-846638; }
+  @keyframes s-new-space-846638 { 0%,26%{opacity:0;max-height:0}32%,100%{opacity:1;max-height:6em} }
+  .s-new-space .ghost { animation-name: s-new-space-154585; }
+  @keyframes s-new-space-154585 { 0%,46%{opacity:0;transform:translate(0,0)}50%{opacity:1;transform:translate(0,0)}68%{opacity:1;transform:translate(0,6.6em)}72%,100%{opacity:0;transform:translate(0,6.6em)} }
+  .s-new-space .moved { animation-name: s-new-space-269; }
+  @keyframes s-new-space-269 { 0%,70%{opacity:0;max-height:0}74%,100%{opacity:1;max-height:2em} }
+  .s-new-space .orig { animation-name: s-new-space-307526; }
+  @keyframes s-new-space-307526 { 0%,70%{opacity:1;max-height:2em}74%,100%{opacity:0;max-height:0} }
+  .s-new-space .keys { animation-name: s-new-space-678024; }
+  @keyframes s-new-space-678024 { 0%,44%{opacity:0}48%,70%{opacity:1}74%,100%{opacity:0} }
+</style>
+<div class="s-new-space sc-anim" style="position:absolute; inset:0">
+<div class="sc-win" style="inset:5% 6% 5% 6%"><div class="sc-bar"><b><span class="logo"></span>vyberun</b><span>File</span><span>View</span><span>Terminal</span><span>Help</span><span class="ctl">─☐✕</span></div><div class="sc-body"><div class="sc-side"><div style="display:flex;align-items:center;gap:.5em;font-size:.75em;color:#8d8d93;padding:.1em .2em .3em"><span style="flex:1;border:1px solid #2a2a2e;border-radius:.3em;padding:0 .4em">⌕ Search spaces</span><span>◷</span><span>⇅</span><span class="plus">+</span></div><div class="sc-space" style="--c:#e5484d"><div class="h">SHOP-142 Checkout</div><div class="r">shop-api</div><div class="r">shop-web</div><div class="r orig" style="overflow:hidden"><span class="src">shop-docs</span></div></div><div class="sc-space sp2" style="--c:#4ec98a;overflow:hidden"><div class="h">SHOP-139 Search</div><div class="r moved" style="overflow:hidden"><span class="dst">shop-docs</span></div></div></div><div class="sc-main" style="position:relative"><div class="sc-tabs"><span class="sc-tab on ">shop-api</span></div><div class="sc-term " style=""><span class="p">PS C:\work\shop\shop-api&gt;</span> </div></div></div></div><div class="sc-menu menu" style="left:30%;top:11%;min-width:8em"><div class="hl ns">New space…</div></div><div class="ghost" style="position:absolute;left:9%;top:44%;background:#26262b;border:1px solid #6ea8fe;border-radius:.3em;padding:.1em .6em;font-size:.78em;color:#e6e6e6">shop-docs</div><div class="sc-keys keys" style="left:44%;top:60%;font-size:1.2em"><kbd>Ctrl</kbd> + drag</div>
+<div class="sc-ptr" data-path="5:.plus|11:.plus|18:.ns|24:.ns|30:-|44:.src|50:.src|68:.dst|76:-"></div>
+</div></div><figcaption>A space of your own, then Ctrl+drag a card into it.</figcaption></figure>
+            <p><span class="ui">General</span> and <span class="ui">Servers</span> are built-in spaces: new cards land there, and they can't be renamed or deleted. Once you have spaces of your own, <span class="ui">General</span> shows only while it has cards in it. Server cards can go in your spaces too.</p>
+            <ul><li><span class="ui">Fold a space:</span> click its name. The card you're in stays in view.</li><li><span class="ui">Reorder spaces:</span> hold <kbd>Ctrl</kbd> and drag a space's name.</li><li><span class="ui">Colour a space:</span> right-click its name ▸ <span class="ui">Color</span>. Its header is tinted with it.</li><li><span class="ui">Rename or delete it:</span> right-click its name. Deleting a space puts its cards back where they came from: projects in <span class="ui">General</span>, servers in <span class="ui">Servers</span>.</li></ul>
+            <p>Each space's header sums up what runs in its cards, such as &quot;1 waiting · 2 working&quot;, even when it's folded. Click the summary to go there.</p>
+            <h2 id="cards">Cards</h2>
+            <p>A card is a project folder, a server, or a set of terminals. Click it and its tabs open, just as you left them. Under it, each tab is listed with its role and when you last worked in it (<code>25m</code>). Cards you haven't touched today are dimmed.</p>
+            <p><span class="ui">⋯</span> on a card opens its menu:</p>
+            <div class="tablewrap"><table><tr><th>Item</th><th>Does</th></tr><tr><td><span class="ui">Run</span></td><td>Runs one of the project's commands (see <a class="link" href="projects.html#run">Projects</a>)</td></tr><tr><td><span class="ui">Open in</span> …</td><td>Opens the project in your editor</td></tr><tr><td><span class="ui">Open Folder</span></td><td>Opens it in File Explorer</td></tr><tr><td><span class="ui">Open in Terminal</span></td><td>Opens a new tab in its folder</td></tr><tr><td><span class="ui">Combine with…</span></td><td>Puts two related folders in one card, such as a backend and its frontend</td></tr><tr><td><span class="ui">Color</span></td><td>Writes the card's name in a colour</td></tr><tr><td><span class="ui">Icon</span></td><td>Puts a picture of your own (PNG, JPG or ICO) beside its name</td></tr><tr><td><span class="ui">Links</span></td><td>Keeps links with the card, such as its ticket or its pull request</td></tr><tr><td><span class="ui">Pin to top</span></td><td>Keeps it at the top of its space</td></tr><tr><td><span class="ui">Move to space</span></td><td>Moves it to another space</td></tr><tr><td><span class="ui">Remove from list</span></td><td>Takes it out of vyberun. The folder and its files stay where they are.</td></tr></table></div>
+            <p>To move a card, hold <kbd>Ctrl</kbd> and drag it. A card with links shows a link icon next to its name: click it to open them.</p>
+            <h2 id="terminals">Terminals without a project</h2>
+            <p>Not everything belongs to a project. Click <span class="ui">+</span> next to a space's name ▸ <span class="ui">New terminal…</span> for a card that just holds terminals.</p>
+            <h2 id="filter">Finding your way</h2>
+            <ul><li><span class="ui">Search spaces</span>, at the top of the sidebar, filters it as you type.</li><li><span class="ui">◷</span> next to it shows only the cards you worked in within the last hour, today, the last 7 days, or the dates you pick. Each card stays in its own space. Its <span class="ui">×</span> shows everything again.</li><li><span class="ui">⇅</span> sorts each space's cards: your own order, the most recent first, or the oldest first.</li><li><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> lists your cards, the most recent first (see <a class="link" href="find-and-search.html#recent-cards">Find and search</a>).</li></ul>
+            <h2 id="archive">Archiving a space</h2>
+            <p>Done with a ticket? Right-click its space's name ▸ <span class="ui">Archive space</span>. It leaves the sidebar with its cards.</p>
+            <p>To find it again, open <span class="ui">View ▸ Sidebar ▸ Archived spaces…</span>. Search by a space's or a card's name, and choose <span class="ui">Restore</span> to bring it back.</p>
+            <h2 id="sidebar-settings">The sidebar itself</h2>
+            <ul><li><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd> hides or shows the sidebar.</li><li>Drag its edge to make it wider or narrower.</li><li>Hold <kbd>Ctrl</kbd> and scroll over it to make everything in it bigger or smaller.</li><li><span class="ui">Settings ▸ Sidebar</span> has more: compact cards on one line, and which parts are shown.</li></ul>
+            <div class="pager"><a href="screenshots.html"><small>‹ Previous</small>Screenshots</a><a class="next" href="projects.html"><small>Next ›</small>Projects</a></div>
+          </article>
+        </div>
+        <aside class="onpage" id="onpage" aria-label="On this page"><div class="h"># on this page</div><a href="#spaces">Spaces</a><a href="#cards">Cards</a><a href="#terminals">Terminals without a project</a><a href="#filter">Finding your way</a><a href="#archive">Archiving a space</a><a href="#sidebar-settings">The sidebar itself</a></aside>
+      </div>
+    </div>
+  </div>
+  <div class="status"><span>vyberun manual · applies to 0.1.10</span><span class="hide-sm" id="count"></span><a class="r" href="https://github.com/xnoire666/vyberun-releases/issues">Report a mistake</a></div>
+</div>
+<script>window.MANUAL = {"id":"spaces-and-cards","topics":{"all-shortcuts":{"c":"#9a9aa0","title":"All shortcuts","ch":"Reference"},"roles-and-handovers":{"c":"#e5484d","title":"Roles and handovers","ch":"Claude Code"},"installing":{"c":"#4ec98a","title":"Installing","ch":"Getting started"},"logs":{"c":"#9a9aa0","title":"Logs","ch":"Troubleshooting"},"settings":{"c":"#9a9aa0","title":"Settings","ch":"Reference"},"files-vyberun-uses":{"c":"#9a9aa0","title":"Files vyberun uses","ch":"Reference"},"split-panes":{"c":"#6ea8fe","title":"Split panes","ch":"The terminal"},"updating-and-uninstalling":{"c":"#4ec98a","title":"Updating and uninstalling","ch":"Getting started"},"find-and-search":{"c":"#6ea8fe","title":"Find and search","ch":"The terminal"},"projects":{"c":"#b48cff","title":"Projects","ch":"Organising your work"},"notifications-and-activity":{"c":"#b48cff","title":"Notifications and activity","ch":"Organising your work"},"using-extensions":{"c":"#9a9aa0","title":"Using extensions","ch":"Extensions"},"spaces-and-cards":{"c":"#b48cff","title":"Spaces and cards","ch":"Organising your work"},"tabs-and-shells":{"c":"#6ea8fe","title":"Tabs and shells","ch":"The terminal"},"what-vyberun-is":{"c":"#4ec98a","title":"What vyberun is","ch":"Getting started"},"making-an-extension":{"c":"#9a9aa0","title":"Making one","ch":"Extensions"},"tmux-sessions":{"c":"#e8b04a","title":"tmux sessions","ch":"Servers"},"sessions-that-survive":{"c":"#6ea8fe","title":"Sessions that survive","ch":"The terminal"},"common-problems":{"c":"#9a9aa0","title":"Common problems","ch":"Troubleshooting"},"copying-files":{"c":"#e8b04a","title":"Copying files","ch":"Servers"},"claude-in-a-tab":{"c":"#e5484d","title":"Claude in a tab","ch":"Claude Code"},"keys-and-putty-sessions":{"c":"#e8b04a","title":"Keys and PuTTY sessions","ch":"Servers"},"adding-a-server":{"c":"#e8b04a","title":"Adding a server","ch":"Servers"},"copy-paste-and-links":{"c":"#6ea8fe","title":"Copy, paste and links","ch":"The terminal"},"reading-other-tabs":{"c":"#e5484d","title":"Reading other tabs","ch":"Claude Code"},"screenshots":{"c":"#6ea8fe","title":"Screenshots","ch":"The terminal"},"reporting-a-problem":{"c":"#9a9aa0","title":"Reporting a problem","ch":"Troubleshooting"},"subagents-and-skills":{"c":"#e5484d","title":"Subagents and skills","ch":"Claude Code"},"menus":{"c":"#9a9aa0","title":"Menus","ch":"Reference"},"the-window":{"c":"#4ec98a","title":"The window","ch":"Getting started"}}};</script>
+<script src="manual.js"></script>
+</body>
+</html>

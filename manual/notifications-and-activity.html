@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notifications and activity · vyberun manual</title>
+<meta name="description" content="How vyberun shows each tab's state, notifies you when an agent needs you or a long command finishes, and shows memory and CPU in Activity.">
+<link rel="icon" href="../img/logo.png">
+<link rel="stylesheet" href="manual.css">
+</head>
+<body>
+<div class="win">
+  <div class="titlebar">
+    <a class="brand" href="./"><img src="../img/logo.png" alt="">vyberun <span>manual</span></a>
+    <span class="menu"><a href="../">Home</a><a href="https://github.com/xnoire666/vyberun-releases/releases">Releases</a><a href="https://github.com/xnoire666/vyberun-releases/issues">Support</a></span>
+    <div class="search" id="search">
+      <span class="ico">⌕</span><input id="q" type="search" placeholder="Search the manual" autocomplete="off" spellcheck="false" aria-label="Search the manual" aria-controls="results"><kbd>/</kbd>
+      <div class="results" id="results" role="listbox" hidden></div>
+    </div>
+    <button class="contents-btn" id="contents-btn" type="button">Contents</button>
+    <a class="get" href="https://apps.microsoft.com/detail/9MX9G62RFFQ5">Get vyberun</a>
+    <span class="controls" aria-hidden="true">─☐✕</span>
+  </div>
+
+  <div class="body">
+    <nav class="side" id="side" aria-label="Contents">
+      <div class="space" style="--c:#4ec98a"><button class="space-head" type="button" data-ch="Getting started" aria-expanded="true"><span class="chev">⌄</span>Getting started<span class="sum">4</span></button><a class="item" data-id="what-vyberun-is" href="what-vyberun-is.html"><span class="dot"></span>What vyberun is</a><a class="item" data-id="installing" href="installing.html"><span class="dot"></span>Installing</a><a class="item" data-id="updating-and-uninstalling" href="updating-and-uninstalling.html"><span class="dot"></span>Updating and uninstalling</a><a class="item" data-id="the-window" href="the-window.html"><span class="dot"></span>The window</a></div>
+      <div class="space" style="--c:#6ea8fe"><button class="space-head" type="button" data-ch="The terminal" aria-expanded="true"><span class="chev">⌄</span>The terminal<span class="sum">6</span></button><a class="item" data-id="tabs-and-shells" href="tabs-and-shells.html"><span class="dot"></span>Tabs and shells</a><a class="item" data-id="split-panes" href="split-panes.html"><span class="dot"></span>Split panes</a><a class="item" data-id="sessions-that-survive" href="sessions-that-survive.html"><span class="dot"></span>Sessions that survive</a><a class="item" data-id="find-and-search" href="find-and-search.html"><span class="dot"></span>Find and search</a><a class="item" data-id="copy-paste-and-links" href="copy-paste-and-links.html"><span class="dot"></span>Copy, paste and links</a><a class="item" data-id="screenshots" href="screenshots.html"><span class="dot"></span>Screenshots</a></div>
+      <div class="space" style="--c:#b48cff"><button class="space-head" type="button" data-ch="Organising your work" aria-expanded="true"><span class="chev">⌄</span>Organising your work<span class="sum">3</span></button><a class="item" data-id="spaces-and-cards" href="spaces-and-cards.html"><span class="dot"></span>Spaces and cards</a><a class="item" data-id="projects" href="projects.html"><span class="dot"></span>Projects</a><a class="item sel" aria-current="page" data-id="notifications-and-activity" href="notifications-and-activity.html"><span class="dot"></span>Notifications and activity</a></div>
+      <div class="space" style="--c:#e8b04a"><button class="space-head" type="button" data-ch="Servers" aria-expanded="true"><span class="chev">⌄</span>Servers<span class="sum">4</span></button><a class="item" data-id="adding-a-server" href="adding-a-server.html"><span class="dot"></span>Adding a server</a><a class="item" data-id="keys-and-putty-sessions" href="keys-and-putty-sessions.html"><span class="dot"></span>Keys and PuTTY sessions</a><a class="item" data-id="tmux-sessions" href="tmux-sessions.html"><span class="dot"></span>tmux sessions</a><a class="item" data-id="copying-files" href="copying-files.html"><span class="dot"></span>Copying files</a></div>
+      <div class="space" style="--c:#e5484d"><button class="space-head" type="button" data-ch="Claude Code" aria-expanded="true"><span class="chev">⌄</span>Claude Code<span class="sum">4</span></button><a class="item" data-id="claude-in-a-tab" href="claude-in-a-tab.html"><span class="dot"></span>Claude in a tab</a><a class="item" data-id="roles-and-handovers" href="roles-and-handovers.html"><span class="dot"></span>Roles and handovers</a><a class="item" data-id="reading-other-tabs" href="reading-other-tabs.html"><span class="dot"></span>Reading other tabs</a><a class="item" data-id="subagents-and-skills" href="subagents-and-skills.html"><span class="dot"></span>Subagents and skills</a></div>
+      <div class="space" style="--c:#9a9aa0"><button class="space-head" type="button" data-ch="Extensions" aria-expanded="true"><span class="chev">⌄</span>Extensions<span class="sum">2</span></button><a class="item" data-id="using-extensions" href="using-extensions.html"><span class="dot"></span>Using extensions</a><a class="item" data-id="making-an-extension" href="making-an-extension.html"><span class="dot"></span>Making one</a></div>
+      <div class="space" style="--c:#9a9aa0"><button class="space-head" type="button" data-ch="Reference" aria-expanded="true"><span class="chev">⌄</span>Reference<span class="sum">4</span></button><a class="item" data-id="all-shortcuts" href="all-shortcuts.html"><span class="dot"></span>All shortcuts</a><a class="item" data-id="menus" href="menus.html"><span class="dot"></span>Menus</a><a class="item" data-id="settings" href="settings.html"><span class="dot"></span>Settings</a><a class="item" data-id="files-vyberun-uses" href="files-vyberun-uses.html"><span class="dot"></span>Files vyberun uses</a></div>
+      <div class="space" style="--c:#9a9aa0"><button class="space-head" type="button" data-ch="Troubleshooting" aria-expanded="true"><span class="chev">⌄</span>Troubleshooting<span class="sum">3</span></button><a class="item" data-id="common-problems" href="common-problems.html"><span class="dot"></span>Common problems</a><a class="item" data-id="logs" href="logs.html"><span class="dot"></span>Logs</a><a class="item" data-id="reporting-a-problem" href="reporting-a-problem.html"><span class="dot"></span>Reporting a problem</a></div>
+    </nav>
+
+    <div class="main">
+      <div class="tabrow" id="tabs"></div>
+      <div class="panes">
+        <div class="page" id="page">
+          <div class="cmd" aria-hidden="true"><span class="ps">PS C:\&gt; </span><span class="c">vyberun help notifications-and-activity</span> <span class="cursor"></span></div>
+          <article data-topic="notifications-and-activity">
+            <div class="crumbs"><a href="./">Manual</a> › Organising your work</div>
+            <h1>Notifications and activity</h1>
+            <p class="lead">See what's working, what needs you, and what it costs.</p>
+            <h2 id="state">A tab's state</h2>
+            <p>Each tab, in the tab row and in the sidebar, shows how it's going:</p>
+            <div class="tablewrap"><table><tr><th>Shown</th><th>Means</th></tr><tr><td>Amber</td><td>Waiting for you: an agent asks a question or needs your permission</td></tr><tr><td>Accent colour</td><td>Working: an agent or a command is busy</td></tr><tr><td>Green</td><td>Finished while you were elsewhere</td></tr><tr><td>Red</td><td>Failed</td></tr><tr><td>Nothing</td><td>Idle</td></tr></table></div>
+            <figure class="scene" role="img" aria-label="Working blinks, waiting is amber, done is green."><div class="sc-stage"><style>
+  /* each tab says how its agent is doing: working (blinking), waiting for you (amber !), finished (green) */
+
+</style>
+<div class="s-agent-states sc-anim" style="position:absolute; inset:0">
+<div class="sc-win" style="inset:5% 6% 5% 6%"><div class="sc-bar"><b><span class="logo"></span>vyberun</b><span>File</span><span>View</span><span>Terminal</span><span>Help</span><span class="ctl">─☐✕</span></div><div class="sc-body"><div class="sc-side"><div class="sc-space" style="--c:#e5484d"><div class="h">SHOP-142 Checkout <span style="margin-left:auto;font-weight:400;color:#e8b04a">1 waiting · 1 working</span></div><div class="r">shop-api</div><div class="r" style="--d:#6ea8fe;padding-left:1.2em"><i class="sc-blink"></i>✳ backend <span style="color:#8d8d93">role: Backend</span></div><div class="r">shop-web</div><div class="r" style="--d:#e8b04a;padding-left:1.2em"><i></i>✳ frontend <span style="color:#e8b04a">!</span></div><div class="r" style="--d:#4ec98a;padding-left:1.2em"><i class="sc-blink"></i>✳ qa <span style="color:#4ec98a">done</span></div></div></div><div class="sc-main" style="position:relative"><div class="sc-tabs"><span class="sc-tab on"><i class="sc-blink" style="--d:#6ea8fe"></i>backend<span class="role">role: Backend</span></span><span class="sc-tab "><i style="--d:#e8b04a"></i>frontend <span style="color:#e8b04a">!</span></span><span class="sc-tab "><i style="--d:#4ec98a"></i>qa</span></div><div class="sc-term " style=""><span class="g">●</span> Adding the validation rules to CheckoutRequest.php
+  <span class="p">⎿ Writing app/Http/Requests/CheckoutRequest.php</span>
+
+<span class="y">✶ Working… (34s)</span></div></div></div></div>
+
+</div></div><figcaption>Working blinks, waiting is amber, done is green.</figcaption></figure>
+            <p>An agent counts as working while it waits on a long command or on its own background agents too. Each space's header sums up its cards, most pressing first, such as &quot;1 waiting · 2 working&quot;.</p>
+            <h2 id="notifications">Notifications</h2>
+            <p>When something needs you while you're in another tab or another program, Windows shows a notification, and vyberun's taskbar button flashes until you come back:</p>
+            <ul><li>A Claude needs you, or has finished, with how long it worked.</li><li>One of Claude's subagents has finished.</li><li>A command that ran over 10 seconds has finished or failed. Turn this off in <span class="ui">Settings ▸ Terminal ▸ Long commands</span>.</li><li>Claude tabs stopped messaging each other, because they kept going without you (see <a class="link" href="roles-and-handovers.html#loop-guard">Roles and handovers</a>).</li></ul>
+            <figure class="scene" role="img" aria-label="In another program: a notification, and vyberun's taskbar button flashes."><div class="sc-stage"><style>
+  /* in another program: Windows shows that Claude needs you, and vyberun's taskbar button flashes */
+.s-notification .toast { animation-name: s-notification-385016; }
+  @keyframes s-notification-385016 { 0%,14%{opacity:0;transform:translateY(1em)}20%,86%{opacity:1;transform:none}92%,100%{opacity:0} }
+  .s-notification .flash { animation-name: s-notification-923515; }
+  @keyframes s-notification-923515 { 0%,18%{background:transparent}22%,30%{background:#e8b04a}34%,42%{background:transparent}46%,54%{background:#e8b04a}58%,100%{background:transparent} }
+</style>
+<div class="s-notification sc-anim" style="position:absolute; inset:0">
+<div style="position:absolute;inset:4% 6% 16% 6%;background:#1e1e1e;border:1px solid #333;border-radius:.4em;font:.8em/1.6 var(--mono);color:#9cdcfe;padding:.6em 1em;white-space:pre"><span style="color:#8d8d93">// Checkout.jsx</span>
+export function Checkout({ cart }) {
+  <span style="color:#c586c0">if</span> (!cart.items.length) {
+    <span style="color:#c586c0">return</span> &lt;Empty /&gt;;
+  }
+}</div><div class="sc-taskbar" style="justify-content:center;gap:.6em"><span style="width:1.4em;height:1.2em;border-radius:.2em;background:#3a7bd5"></span><span class="flash" style="padding:.15em;border-radius:.25em"><span class="ico" style="display:block"></span></span><span style="margin-left:auto">9:41</span></div><div class="sc-toast toast" style="width:42%"><b><i></i>vyberun</b><div style="color:#e6e6e6;margin:.2em 0">! Claude needs you</div><span>frontend · SHOP-142 Checkout › shop-web</span></div>
+
+</div></div><figcaption>In another program: a notification, and vyberun's taskbar button flashes.</figcaption></figure>
+            <p>Windows' own notification settings (<span class="ui">Settings ▸ System ▸ Notifications</span>) decide whether and how they show, as for any program.</p>
+            <h2 id="memory">Memory and CPU</h2>
+            <p>Next to the tabs, vyberun shows the memory and CPU used by itself and everything in its tabs, read every few seconds. It turns amber when this PC is low on memory.</p>
+            <h2 id="activity">Activity</h2>
+            <p>Click the memory and CPU, or choose <span class="ui">Terminal ▸ Activity…</span>. It lists everything running in vyberun's tabs:</p>
+            <ul><li>Each pane's Claude Code, command, service or shell, with its memory, its CPU now, and how long it's been running.</li><li>Programs left running after their tab closed, such as a dev server an agent started in the background.</li><li>vyberun's own share, apart.</li></ul>
+            <p><span class="ui">Go to</span> opens that tab. <span class="ui">Stop</span> ends one, the way <kbd>Ctrl</kbd>+<kbd>C</kbd> would, and the tab stays open. <span class="ui">Stop all</span> ends everything listed. A Claude tab that has been idle for a long time is marked, so you can stop the ones you've finished with.</p>
+            <div class="pager"><a href="projects.html"><small>‹ Previous</small>Projects</a><a class="next" href="adding-a-server.html"><small>Next ›</small>Adding a server</a></div>
+          </article>
+        </div>
+        <aside class="onpage" id="onpage" aria-label="On this page"><div class="h"># on this page</div><a href="#state">A tab's state</a><a href="#notifications">Notifications</a><a href="#memory">Memory and CPU</a><a href="#activity">Activity</a></aside>
+      </div>
+    </div>
+  </div>
+  <div class="status"><span>vyberun manual · applies to 0.1.10</span><span class="hide-sm" id="count"></span><a class="r" href="https://github.com/xnoire666/vyberun-releases/issues">Report a mistake</a></div>
+</div>
+<script>window.MANUAL = {"id":"notifications-and-activity","topics":{"all-shortcuts":{"c":"#9a9aa0","title":"All shortcuts","ch":"Reference"},"roles-and-handovers":{"c":"#e5484d","title":"Roles and handovers","ch":"Claude Code"},"installing":{"c":"#4ec98a","title":"Installing","ch":"Getting started"},"logs":{"c":"#9a9aa0","title":"Logs","ch":"Troubleshooting"},"settings":{"c":"#9a9aa0","title":"Settings","ch":"Reference"},"files-vyberun-uses":{"c":"#9a9aa0","title":"Files vyberun uses","ch":"Reference"},"split-panes":{"c":"#6ea8fe","title":"Split panes","ch":"The terminal"},"updating-and-uninstalling":{"c":"#4ec98a","title":"Updating and uninstalling","ch":"Getting started"},"find-and-search":{"c":"#6ea8fe","title":"Find and search","ch":"The terminal"},"projects":{"c":"#b48cff","title":"Projects","ch":"Organising your work"},"notifications-and-activity":{"c":"#b48cff","title":"Notifications and activity","ch":"Organising your work"},"using-extensions":{"c":"#9a9aa0","title":"Using extensions","ch":"Extensions"},"spaces-and-cards":{"c":"#b48cff","title":"Spaces and cards","ch":"Organising your work"},"tabs-and-shells":{"c":"#6ea8fe","title":"Tabs and shells","ch":"The terminal"},"what-vyberun-is":{"c":"#4ec98a","title":"What vyberun is","ch":"Getting started"},"making-an-extension":{"c":"#9a9aa0","title":"Making one","ch":"Extensions"},"tmux-sessions":{"c":"#e8b04a","title":"tmux sessions","ch":"Servers"},"sessions-that-survive":{"c":"#6ea8fe","title":"Sessions that survive","ch":"The terminal"},"common-problems":{"c":"#9a9aa0","title":"Common problems","ch":"Troubleshooting"},"copying-files":{"c":"#e8b04a","title":"Copying files","ch":"Servers"},"claude-in-a-tab":{"c":"#e5484d","title":"Claude in a tab","ch":"Claude Code"},"keys-and-putty-sessions":{"c":"#e8b04a","title":"Keys and PuTTY sessions","ch":"Servers"},"adding-a-server":{"c":"#e8b04a","title":"Adding a server","ch":"Servers"},"copy-paste-and-links":{"c":"#6ea8fe","title":"Copy, paste and links","ch":"The terminal"},"reading-other-tabs":{"c":"#e5484d","title":"Reading other tabs","ch":"Claude Code"},"screenshots":{"c":"#6ea8fe","title":"Screenshots","ch":"The terminal"},"reporting-a-problem":{"c":"#9a9aa0","title":"Reporting a problem","ch":"Troubleshooting"},"subagents-and-skills":{"c":"#e5484d","title":"Subagents and skills","ch":"Claude Code"},"menus":{"c":"#9a9aa0","title":"Menus","ch":"Reference"},"the-window":{"c":"#4ec98a","title":"The window","ch":"Getting started"}}};</script>
+<script src="manual.js"></script>
+</body>
+</html>

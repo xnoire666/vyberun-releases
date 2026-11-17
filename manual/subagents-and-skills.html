@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subagents and skills · vyberun manual</title>
+<meta name="description" content="Watching Claude Code's subagents in vyberun's sidebar and their read-only panel, stuck agents, and adding skills to a saved agent.">
+<link rel="icon" href="../img/logo.png">
+<link rel="stylesheet" href="manual.css">
+</head>
+<body>
+<div class="win">
+  <div class="titlebar">
+    <a class="brand" href="./"><img src="../img/logo.png" alt="">vyberun <span>manual</span></a>
+    <span class="menu"><a href="../">Home</a><a href="https://github.com/xnoire666/vyberun-releases/releases">Releases</a><a href="https://github.com/xnoire666/vyberun-releases/issues">Support</a></span>
+    <div class="search" id="search">
+      <span class="ico">⌕</span><input id="q" type="search" placeholder="Search the manual" autocomplete="off" spellcheck="false" aria-label="Search the manual" aria-controls="results"><kbd>/</kbd>
+      <div class="results" id="results" role="listbox" hidden></div>
+    </div>
+    <button class="contents-btn" id="contents-btn" type="button">Contents</button>
+    <a class="get" href="https://apps.microsoft.com/detail/9MX9G62RFFQ5">Get vyberun</a>
+    <span class="controls" aria-hidden="true">─☐✕</span>
+  </div>
+
+  <div class="body">
+    <nav class="side" id="side" aria-label="Contents">
+      <div class="space" style="--c:#4ec98a"><button class="space-head" type="button" data-ch="Getting started" aria-expanded="true"><span class="chev">⌄</span>Getting started<span class="sum">4</span></button><a class="item" data-id="what-vyberun-is" href="what-vyberun-is.html"><span class="dot"></span>What vyberun is</a><a class="item" data-id="installing" href="installing.html"><span class="dot"></span>Installing</a><a class="item" data-id="updating-and-uninstalling" href="updating-and-uninstalling.html"><span class="dot"></span>Updating and uninstalling</a><a class="item" data-id="the-window" href="the-window.html"><span class="dot"></span>The window</a></div>
+      <div class="space" style="--c:#6ea8fe"><button class="space-head" type="button" data-ch="The terminal" aria-expanded="true"><span class="chev">⌄</span>The terminal<span class="sum">6</span></button><a class="item" data-id="tabs-and-shells" href="tabs-and-shells.html"><span class="dot"></span>Tabs and shells</a><a class="item" data-id="split-panes" href="split-panes.html"><span class="dot"></span>Split panes</a><a class="item" data-id="sessions-that-survive" href="sessions-that-survive.html"><span class="dot"></span>Sessions that survive</a><a class="item" data-id="find-and-search" href="find-and-search.html"><span class="dot"></span>Find and search</a><a class="item" data-id="copy-paste-and-links" href="copy-paste-and-links.html"><span class="dot"></span>Copy, paste and links</a><a class="item" data-id="screenshots" href="screenshots.html"><span class="dot"></span>Screenshots</a></div>
+      <div class="space" style="--c:#b48cff"><button class="space-head" type="button" data-ch="Organising your work" aria-expanded="true"><span class="chev">⌄</span>Organising your work<span class="sum">3</span></button><a class="item" data-id="spaces-and-cards" href="spaces-and-cards.html"><span class="dot"></span>Spaces and cards</a><a class="item" data-id="projects" href="projects.html"><span class="dot"></span>Projects</a><a class="item" data-id="notifications-and-activity" href="notifications-and-activity.html"><span class="dot"></span>Notifications and activity</a></div>
+      <div class="space" style="--c:#e8b04a"><button class="space-head" type="button" data-ch="Servers" aria-expanded="true"><span class="chev">⌄</span>Servers<span class="sum">4</span></button><a class="item" data-id="adding-a-server" href="adding-a-server.html"><span class="dot"></span>Adding a server</a><a class="item" data-id="keys-and-putty-sessions" href="keys-and-putty-sessions.html"><span class="dot"></span>Keys and PuTTY sessions</a><a class="item" data-id="tmux-sessions" href="tmux-sessions.html"><span class="dot"></span>tmux sessions</a><a class="item" data-id="copying-files" href="copying-files.html"><span class="dot"></span>Copying files</a></div>
+      <div class="space" style="--c:#e5484d"><button class="space-head" type="button" data-ch="Claude Code" aria-expanded="true"><span class="chev">⌄</span>Claude Code<span class="sum">4</span></button><a class="item" data-id="claude-in-a-tab" href="claude-in-a-tab.html"><span class="dot"></span>Claude in a tab</a><a class="item" data-id="roles-and-handovers" href="roles-and-handovers.html"><span class="dot"></span>Roles and handovers</a><a class="item" data-id="reading-other-tabs" href="reading-other-tabs.html"><span class="dot"></span>Reading other tabs</a><a class="item sel" aria-current="page" data-id="subagents-and-skills" href="subagents-and-skills.html"><span class="dot"></span>Subagents and skills</a></div>
+      <div class="space" style="--c:#9a9aa0"><button class="space-head" type="button" data-ch="Extensions" aria-expanded="true"><span class="chev">⌄</span>Extensions<span class="sum">2</span></button><a class="item" data-id="using-extensions" href="using-extensions.html"><span class="dot"></span>Using extensions</a><a class="item" data-id="making-an-extension" href="making-an-extension.html"><span class="dot"></span>Making one</a></div>
+      <div class="space" style="--c:#9a9aa0"><button class="space-head" type="button" data-ch="Reference" aria-expanded="true"><span class="chev">⌄</span>Reference<span class="sum">4</span></button><a class="item" data-id="all-shortcuts" href="all-shortcuts.html"><span class="dot"></span>All shortcuts</a><a class="item" data-id="menus" href="menus.html"><span class="dot"></span>Menus</a><a class="item" data-id="settings" href="settings.html"><span class="dot"></span>Settings</a><a class="item" data-id="files-vyberun-uses" href="files-vyberun-uses.html"><span class="dot"></span>Files vyberun uses</a></div>
+      <div class="space" style="--c:#9a9aa0"><button class="space-head" type="button" data-ch="Troubleshooting" aria-expanded="true"><span class="chev">⌄</span>Troubleshooting<span class="sum">3</span></button><a class="item" data-id="common-problems" href="common-problems.html"><span class="dot"></span>Common problems</a><a class="item" data-id="logs" href="logs.html"><span class="dot"></span>Logs</a><a class="item" data-id="reporting-a-problem" href="reporting-a-problem.html"><span class="dot"></span>Reporting a problem</a></div>
+    </nav>
+
+    <div class="main">
+      <div class="tabrow" id="tabs"></div>
+      <div class="panes">
+        <div class="page" id="page">
+          <div class="cmd" aria-hidden="true"><span class="ps">PS C:\&gt; </span><span class="c">vyberun help subagents-and-skills</span> <span class="cursor"></span></div>
+          <article data-topic="subagents-and-skills">
+            <div class="crumbs"><a href="./">Manual</a> › Claude Code</div>
+            <h1>Subagents and skills</h1>
+            <p class="lead">Follow a Claude's own agents as they work, and give an agent skills of its own.</p>
+            <h2 id="subagents">Subagents in the sidebar</h2>
+            <p>A Claude can run agents of its own, defined in its project's <code>.claude/agents</code>. They run inside that one Claude tab, with no extra terminals. While they work, vyberun gives each a line under the Claude tab in the sidebar: what it's doing now, and for how long. A finished one says <span class="ui">done</span> for a few minutes afterwards.</p>
+            <figure class="scene" role="img" aria-label="Click a subagent's line to follow its work beside the terminal."><div class="sc-stage"><style>
+  /* a Claude's own agents: a line each under its tab; click one to follow its work beside the terminal */
+.s-subagent-panel .panel { animation-name: s-subagent-panel-772919; }
+  @keyframes s-subagent-panel-772919 { 0%,30%{opacity:0;transform:translateX(1em)}36%,94%{opacity:1;transform:none}98%,100%{opacity:0} }
+  .s-subagent-panel .cr { animation-name: s-subagent-panel-233868; }
+  @keyframes s-subagent-panel-233868 { 0%,28%{background:transparent}32%,94%{background:#26262b}98%,100%{background:transparent} }
+  .s-subagent-panel .new { animation-name: s-subagent-panel-178310; }
+  @keyframes s-subagent-panel-178310 { 0%,62%{opacity:0}66%,100%{opacity:1} }
+</style>
+<div class="s-subagent-panel sc-anim" style="position:absolute; inset:0">
+<div class="sc-win" style="inset:5% 6% 5% 6%"><div class="sc-bar"><b><span class="logo"></span>vyberun</b><span>File</span><span>View</span><span>Terminal</span><span>Help</span><span class="ctl">─☐✕</span></div><div class="sc-body"><div class="sc-side"><div class="sc-space" style="--c:#e5484d"><div class="h">SHOP-142 Checkout</div><div class="r">shop-api</div><div class="r" style="--d:#6ea8fe;padding-left:1.2em"><i class="sc-blink"></i>✳ backend</div><div class="r cr" style="padding-left:2.2em;color:#e6e6e6">↳ code-reviewer <span style="color:#8d8d93;margin-left:auto">42s</span></div><div class="r" style="padding-left:2.2em">↳ test-writer <span class="new" style="color:#4ec98a;margin-left:auto">new</span></div></div></div><div class="sc-main" style="position:relative"><div class="sc-tabs"><span class="sc-tab on "><i style="--d:#6ea8fe"></i>backend</span></div><div class="sc-term " style=""><span class="g">●</span> Two agents are on it: code-reviewer
+  checks the rules, test-writer adds tests.
+
+<span class="y">✶ Waiting for 2 agents… (42s)</span></div><div class="sc-panel panel" style="right:0;top:2em;bottom:0;width:48%"><div style="display:flex;justify-content:space-between"><b>code-reviewer</b><span>✕</span></div><div style="margin:.4em 0;color:#8d8d93">Asked: review CheckoutRequest.php against the ticket</div><div>Read app/Http/Requests/CheckoutRequest.php</div><div>Read routes/api.php</div><div>Ran php -l app/Http/…  <span style="color:#4ec98a">ok</span></div><div style="margin-top:.4em;color:#e8b04a">Checking the 422 response…</div></div></div></div></div>
+<div class="sc-ptr" data-path="14:.cr|30:.cr|36:-"></div>
+</div></div><figcaption>Click a subagent's line to follow its work beside the terminal.</figcaption></figure>
+            <h2 id="panel">Following one</h2>
+            <p>Click a subagent's line to follow its work beside the terminal: what it was asked, the files it read and changed, the commands it ran and what came back. The panel is read only: nothing is sent to the agent. <kbd>Esc</kbd> or <span class="ui">✕</span> closes it.</p>
+            <h2 id="stuck">New and stuck</h2>
+            <ul><li><span class="ui">new:</span> it finished while you were elsewhere. If vyberun isn't in front and notifications for long commands are on, Windows tells you too.</li><li><span class="ui">stuck?</span> in amber: it keeps hitting the same wall, such as commands blocked by a hook, the same command again and again, errors in a row, or a long silence. Its panel says why.</li></ul>
+            <h2 id="skills">Skills</h2>
+            <p>A <a class="link" href="roles-and-handovers.html#saved-agents">saved agent</a> can bring skills: instructions Claude Code loads for that tab alone.</p>
+            <ol class="steps"><li>Open <span class="ui">Settings ▸ Agents</span> and edit the saved agent.</li><li><span class="ui">Add .md or .zip files…</span>: a <code>.md</code> is a skill itself, a <code>.zip</code> is a skill's folder.</li><li>Start the agent on a card (<span class="ui">⋯</span> ▸ <span class="ui">Start agent</span>). Its skills are there in that tab.</li></ol>
+            <p>Edit a skill's file any time, in any editor: an agent started afterwards reads the new version.</p>
+            <div class="pager"><a href="reading-other-tabs.html"><small>‹ Previous</small>Reading other tabs</a><a class="next" href="using-extensions.html"><small>Next ›</small>Using extensions</a></div>
+          </article>
+        </div>
+        <aside class="onpage" id="onpage" aria-label="On this page"><div class="h"># on this page</div><a href="#subagents">Subagents in the sidebar</a><a href="#panel">Following one</a><a href="#stuck">New and stuck</a><a href="#skills">Skills</a></aside>
+      </div>
+    </div>
+  </div>
+  <div class="status"><span>vyberun manual · applies to 0.1.10</span><span class="hide-sm" id="count"></span><a class="r" href="https://github.com/xnoire666/vyberun-releases/issues">Report a mistake</a></div>
+</div>
+<script>window.MANUAL = {"id":"subagents-and-skills","topics":{"all-shortcuts":{"c":"#9a9aa0","title":"All shortcuts","ch":"Reference"},"roles-and-handovers":{"c":"#e5484d","title":"Roles and handovers","ch":"Claude Code"},"installing":{"c":"#4ec98a","title":"Installing","ch":"Getting started"},"logs":{"c":"#9a9aa0","title":"Logs","ch":"Troubleshooting"},"settings":{"c":"#9a9aa0","title":"Settings","ch":"Reference"},"files-vyberun-uses":{"c":"#9a9aa0","title":"Files vyberun uses","ch":"Reference"},"split-panes":{"c":"#6ea8fe","title":"Split panes","ch":"The terminal"},"updating-and-uninstalling":{"c":"#4ec98a","title":"Updating and uninstalling","ch":"Getting started"},"find-and-search":{"c":"#6ea8fe","title":"Find and search","ch":"The terminal"},"projects":{"c":"#b48cff","title":"Projects","ch":"Organising your work"},"notifications-and-activity":{"c":"#b48cff","title":"Notifications and activity","ch":"Organising your work"},"using-extensions":{"c":"#9a9aa0","title":"Using extensions","ch":"Extensions"},"spaces-and-cards":{"c":"#b48cff","title":"Spaces and cards","ch":"Organising your work"},"tabs-and-shells":{"c":"#6ea8fe","title":"Tabs and shells","ch":"The terminal"},"what-vyberun-is":{"c":"#4ec98a","title":"What vyberun is","ch":"Getting started"},"making-an-extension":{"c":"#9a9aa0","title":"Making one","ch":"Extensions"},"tmux-sessions":{"c":"#e8b04a","title":"tmux sessions","ch":"Servers"},"sessions-that-survive":{"c":"#6ea8fe","title":"Sessions that survive","ch":"The terminal"},"common-problems":{"c":"#9a9aa0","title":"Common problems","ch":"Troubleshooting"},"copying-files":{"c":"#e8b04a","title":"Copying files","ch":"Servers"},"claude-in-a-tab":{"c":"#e5484d","title":"Claude in a tab","ch":"Claude Code"},"keys-and-putty-sessions":{"c":"#e8b04a","title":"Keys and PuTTY sessions","ch":"Servers"},"adding-a-server":{"c":"#e8b04a","title":"Adding a server","ch":"Servers"},"copy-paste-and-links":{"c":"#6ea8fe","title":"Copy, paste and links","ch":"The terminal"},"reading-other-tabs":{"c":"#e5484d","title":"Reading other tabs","ch":"Claude Code"},"screenshots":{"c":"#6ea8fe","title":"Screenshots","ch":"The terminal"},"reporting-a-problem":{"c":"#9a9aa0","title":"Reporting a problem","ch":"Troubleshooting"},"subagents-and-skills":{"c":"#e5484d","title":"Subagents and skills","ch":"Claude Code"},"menus":{"c":"#9a9aa0","title":"Menus","ch":"Reference"},"the-window":{"c":"#4ec98a","title":"The window","ch":"Getting started"}}};</script>
+<script src="manual.js"></script>
+</body>
+</html>
