@@ -1,8 +1,8 @@
 # Privacy policy
 
-Effective: 16 November 2026
+Effective: 18 November 2026
 
-This policy describes how vyberun handles your information. It covers the vyberun program from the Microsoft Store and from https://github.com/xnoire666/vyberun-releases, and its updates. "We" means the author of vyberun.
+This policy describes how vyberun handles your information. It covers the vyberun program from the Microsoft Store and from https://github.com/xnoire666/vyberun-releases, its updates, and the website https://www.vyberun.com. "We" means the author of vyberun.
 
 ## In short
 
@@ -31,6 +31,10 @@ vyberun starts programs you choose: shells such as PowerShell, Command Prompt an
 
 Extensions are programs written by others. vyberun asks you before an extension runs for the first time. An extension handles data under its own author's terms.
 
+## The website
+
+The website, https://www.vyberun.com, and its manual use no cookies, no analytics and no tracking, and load nothing from other sites. While you read the manual, your browser keeps which pages you have open and what you last searched, so the manual can show them again during your visit. This stays in your browser, is never sent to us, and is gone when you close the browser. The site is hosted by GitHub Pages, which handles the requests your browser makes under GitHub's privacy statement.
+
 ## Microsoft Store
 
 If you install vyberun from the Microsoft Store, Microsoft may collect information about the installation and its updates under Microsoft's privacy statement. We may see the summary reports the Store gives developers, such as numbers of installs or crashes. They don't identify you.
@@ -43,8 +47,9 @@ vyberun is a tool for developers. It doesn't knowingly collect information from 
 
 Uninstalling vyberun doesn't delete your settings, so they're there if you install it again. To remove everything:
 
-1. Delete the folder `%LOCALAPPDATA%\vyberun`.
+1. Delete the folder `%LOCALAPPDATA%\vyberun`, if it's there. The Microsoft Store version, installed on a computer that never had vyberun, keeps these files inside its own folder instead, and Windows deletes them when you uninstall it.
 2. In Windows Credential Manager, under Windows Credentials, remove the entries whose names start with "vyberun server".
+3. If you added vyberun's tools to Claude Code, remove them: run `claude mcp remove --scope user vyberun`, and delete the hooks that run `vyberun-agents.exe` from `%USERPROFILE%\.claude\settings.json`.
 
 ## Changes
 
