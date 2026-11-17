@@ -47,7 +47,9 @@
             <div class="tablewrap"><table><tr><th></th><th>Microsoft Store</th><th>Zip</th></tr><tr><td>.NET</td><td>Included</td><td>Install the .NET 10 Desktop Runtime once</td></tr><tr><td>Updates</td><td>Automatic</td><td>Unzip the new version over the old one</td></tr><tr><td>Signed</td><td>Yes, by Microsoft</td><td>No: Windows may warn you the first time</td></tr><tr><td>Where it runs from</td><td>Installed by Windows</td><td>Any folder you choose</td></tr></table></div>
             <h2 id="from-the-store">From the Microsoft Store</h2>
             <ol class="steps"><li>Open <a class="link" href="https://apps.microsoft.com/detail/9MX9G62RFFQ5">vyberun in the Microsoft Store</a> and choose <span class="ui">Get</span>.</li><li>Start vyberun from the Start menu.</li></ol>
-            <p>You can also install it from a terminal: <code>winget install 9MX9G62RFFQ5</code>.</p>
+            <p>You can also install it from a terminal:</p>
+            <div class="term">winget install vyberun</div>
+            <p>This installs the same Store version, signed by Microsoft. <code>winget install 9MX9G62RFFQ5</code> (its Store ID) does the same.</p>
             <h2 id="from-the-zip">From the zip</h2>
             <ol class="steps"><li>Install the <a class="link" href="https://dotnet.microsoft.com/download/dotnet/10.0">.NET 10 Desktop Runtime</a> (x64), once per PC. If it's missing, Windows offers the download when vyberun starts.</li><li>Download the latest <code>vyberun-&lt;version&gt;-win-x64.zip</code> from <a class="link" href="https://github.com/xnoire666/vyberun-releases/releases">Releases</a>.</li><li>Unzip it to a folder that stays, for example <code>C:\Tools</code>, and run <code>vyberun\vyberun.exe</code>.</li></ol>
             <div class="note warn"><p><span class="k">Warning.</span> The zip isn't signed. If Windows shows &quot;Windows protected your PC&quot;, choose <span class="ui">More info</span>, then <span class="ui">Run anyway</span>. If Smart App Control is on, Windows may block the zip's vyberun altogether: use the Store version instead.</p></div>
